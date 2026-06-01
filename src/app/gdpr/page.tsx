@@ -153,7 +153,7 @@ const gdprSchema = {
         "@type": "PostalAddress",
         streetAddress: "82a James Carter Road",
         addressLocality: "Mildenhall",
-        addressRegion": "Suffolk",
+        addressRegion: "Suffolk",
         postalCode: "IP28 7DE",
         addressCountry: "GB"
       },

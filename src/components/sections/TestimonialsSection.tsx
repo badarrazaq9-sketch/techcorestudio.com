@@ -120,11 +120,11 @@ export default function TestimonialsSection() {
           ratingValue: activeTestimonial.rating,
           bestRating: "5",
         },
-        datePublished: activeTestimonial.datePublished,
-        publisher: {
-          "@type": "Organization",
-          name: "TechCore Studio",
-        },
+        // datePublished: activeTestimonial.datePublished,
+        // publisher: {
+        //   "@type": "Organization",
+        //   name: "TechCore Studio",
+        // },
       },
       {
         "@type": "AggregateRating",

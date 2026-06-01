@@ -3,8 +3,8 @@
 import React from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { ArrowRight, Play, MapPin, Sparkles, Layers, CheckCircle2, Star, TrendingUp } from "lucide-react";
-import StatCard from "@/components/ui/StatCard";
-import ScrollIndicator from "@/components/ui/ScrollIndicator";
+// import StatCard from "@/components/ui/StatCard";
+// import ScrollIndicator from "@/components/ui/ScrollIndicator";
 import GradientButton from "@/components/ui/GradientButton";
 
 const stats = [
@@ -167,7 +167,7 @@ export default function ServicesHero() {
         </motion.div>
 
         {/* Stats Row */}
-        <motion.div
+        {/* <motion.div
           className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gradient-to-b from-white/[0.08] to-transparent rounded-2xl overflow-hidden max-w-3xl mx-auto backdrop-blur-sm border border-white/[0.06]"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -182,10 +182,10 @@ export default function ServicesHero() {
               delay={1.7 + i * 0.1}
             />
           ))}
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
-      <ScrollIndicator label="Explore Services" />
+      {/* <ScrollIndicator label="Explore Services" /> */}
     </section>
   );
 }
