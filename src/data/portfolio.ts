@@ -1,0 +1,167 @@
+export type Category = "all" | "web" | "app" | "logo" | "branding" | "ai" | "uiux";
+
+export interface Project {
+  id: number;
+  title: string;
+  category: Category;
+  categoryLabel: string;
+  description: string;
+  image: string;
+  tags: string[];
+  likes: number;
+  views: number;
+  link: string;
+  featured?: boolean;
+}
+
+export const allProjects: Project[] = [
+  {
+    id: 1,
+    title: "Finova Banking Platform",
+    category: "web",
+    categoryLabel: "Web Development",
+    description: "A modern banking dashboard with real-time analytics, secure transactions, and intuitive user experience for a fintech startup.",
+    image: "/portfolio/finova.jpg",
+    tags: ["Next.js", "TypeScript", "Tailwind", "PostgreSQL"],
+    likes: 234,
+    views: 1205,
+    link: "#",
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "HealthTrack Mobile App",
+    category: "app",
+    categoryLabel: "Mobile App",
+    description: "Cross-platform health tracking application with AI-powered insights, wearable integration, and personalized wellness recommendations.",
+    image: "/portfolio/healthtrack.jpg",
+    tags: ["React Native", "Node.js", "TensorFlow", "Firebase"],
+    likes: 189,
+    views: 892,
+    link: "#",
+    featured: true,
+  },
+  {
+    id: 3,
+    title: "Nexus Tech Brand Identity",
+    category: "logo",
+    categoryLabel: "Logo Design",
+    description: "Complete brand identity system including logo, color palette, typography, and brand guidelines for a tech startup.",
+    image: "/portfolio/nexus-brand.jpg",
+    tags: ["Figma", "Illustrator", "Brand Strategy"],
+    likes: 156,
+    views: 678,
+    link: "#",
+  },
+  {
+    id: 4,
+    title: "E-Commerce Redesign",
+    category: "uiux",
+    categoryLabel: "UI/UX Design",
+    description: "Complete redesign of a fashion e-commerce platform focusing on conversion optimization and seamless checkout experience.",
+    image: "/portfolio/ecommerce.jpg",
+    tags: ["Figma", "Prototyping", "User Research", "A/B Testing"],
+    likes: 312,
+    views: 1543,
+    link: "#",
+    featured: true,
+  },
+  {
+    id: 5,
+    title: "AI Content Generator",
+    category: "ai",
+    categoryLabel: "AI Integration",
+    description: "Enterprise-grade AI content generation platform with custom LLM fine-tuning, multi-language support, and SEO optimization.",
+    image: "/portfolio/ai-content.jpg",
+    tags: ["OpenAI API", "Python", "FastAPI", "React"],
+    likes: 278,
+    views: 1102,
+    link: "#",
+  },
+  {
+    id: 6,
+    title: "CloudSync Dashboard",
+    category: "web",
+    categoryLabel: "Web Development",
+    description: "Real-time cloud infrastructure monitoring dashboard with predictive analytics and automated scaling recommendations.",
+    image: "/portfolio/cloudsync.jpg",
+    tags: ["Vue.js", "D3.js", "AWS", "GraphQL"],
+    likes: 145,
+    views: 756,
+    link: "#",
+  },
+  {
+    id: 7,
+    title: "Foodie Express App",
+    category: "app",
+    categoryLabel: "Mobile App",
+    description: "Food delivery application with real-time tracking, AI-powered recommendations, and seamless payment integration.",
+    image: "/portfolio/foodie.jpg",
+    tags: ["Flutter", "Dart", "Google Maps API", "Stripe"],
+    likes: 198,
+    views: 934,
+    link: "#",
+  },
+  {
+    id: 8,
+    title: "EcoGreen Brand System",
+    category: "branding",
+    categoryLabel: "Branding",
+    description: "Sustainable brand identity for an eco-friendly products company, including packaging design and digital assets.",
+    image: "/portfolio/ecogreen.jpg",
+    tags: ["Brand Identity", "Packaging", "Sustainable Design"],
+    likes: 167,
+    views: 823,
+    link: "#",
+  },
+  {
+    id: 9,
+    title: "CryptoVault Platform",
+    category: "web",
+    categoryLabel: "Web Development",
+    description: "Secure cryptocurrency trading platform with advanced charting, portfolio management, and multi-layer security.",
+    image: "/portfolio/cryptovault.jpg",
+    tags: ["Next.js", "Web3.js", "Solidity", "Chart.js"],
+    likes: 245,
+    views: 1089,
+    link: "#",
+  },
+  {
+    id: 10,
+    title: "MedFlow UI Kit",
+    category: "uiux",
+    categoryLabel: "UI/UX Design",
+    description: "Comprehensive healthcare UI kit with 200+ components, accessibility-first design, and dark mode support.",
+    image: "/portfolio/medflow.jpg",
+    tags: ["Figma", "Design System", "Accessibility", "WCAG"],
+    likes: 203,
+    views: 967,
+    link: "#",
+  },
+  {
+    id: 11,
+    title: "SmartRetail AI",
+    category: "ai",
+    categoryLabel: "AI Integration",
+    description: "Computer vision-powered retail analytics solution for inventory management and customer behavior analysis.",
+    image: "/portfolio/smartretail.jpg",
+    tags: ["Computer Vision", "Python", "YOLO", "Edge AI"],
+    likes: 189,
+    views: 876,
+    link: "#",
+  },
+  {
+    id: 12,
+    title: "Pulse Fitness Logo",
+    category: "logo",
+    categoryLabel: "Logo Design",
+    description: "Dynamic fitness brand logo with motion-ready variants for digital and print applications.",
+    image: "/portfolio/pulse-logo.jpg",
+    tags: ["Logo Design", "Motion Graphics", "Vector"],
+    likes: 134,
+    views: 654,
+    link: "#",
+  },
+];
+
+export const featuredProjects: Project[] = allProjects.filter(p => p.featured);
