@@ -167,8 +167,8 @@ const ServicesHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
         >
-          From concept to deployment, we deliver full-stack digital solutions
-          tailored to your business needs. Scalable, secure, and built for the future.
+          From web design to app development and marketing, we provide end-to-end
+          digital services designed to grow your business.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -261,58 +261,124 @@ const ServicesGrid = () => {
 
   const services = [
     {
-      icon: <Code size={24} />,
-      title: "Web Development",
-      subtitle: "Full-Stack Engineering",
-      description: "Enterprise-grade web applications built with Next.js, React, Node.js, and cloud-native architectures. From MVPs to complex SaaS platforms.",
-      features: ["Next.js & React", "Node.js APIs", "Microservices", "GraphQL", "Serverless"],
-      color: "indigo",
-      price: "From $15k",
-    },
-    {
       icon: <Palette size={24} />,
-      title: "UI/UX Design",
-      subtitle: "User-Centered Design",
-      description: "Complete design systems from research to pixel-perfect interfaces. We craft experiences that convert visitors into loyal users.",
-      features: ["Design Systems", "User Research", "Prototyping", "Accessibility", "Brand Identity"],
-      color: "purple",
-      price: "From $8k",
+      title: "Logo Design",
+      subtitle: "Build a brand people remember",
+      description:
+        "Professional logo designs that make your business look trustworthy, modern, and memorable from day one.",
+      features: ["Startups", "Small Businesses", "Brand Identity"],
+      color: "indigo",
+      price: "From $3k",
     },
     {
-      icon: <Zap size={24} />,
-      title: "Performance Optimization",
-      subtitle: "Speed & Scale",
-      description: "Lightning-fast load times and optimized Core Web Vitals. We audit, optimize, and monitor your application performance 24/7.",
-      features: ["Core Web Vitals", "CDN Setup", "Lazy Loading", "Code Splitting", "Caching Strategy"],
-      color: "amber",
+      icon: <Sparkles size={24} />,
+      title: "3D Logo Design",
+      subtitle: "Premium logos with depth & style",
+      description:
+        "Modern 3D logo concepts designed to give your brand a premium and visually powerful identity.",
+      features: ["Gaming Brands", "YouTubers", "High-Impact Visuals"],
+      color: "purple",
+      price: "From $4k",
+    },
+    {
+      icon: <Star size={24} />,
+      title: "Mascot Logo Design",
+      subtitle: "Bold mascot branding that stands out",
+      description:
+        "Creative mascot logos perfect for gaming, sports, esports, and modern digital brands.",
+      features: ["Esports Teams", "Streamers", "Character-Driven Style"],
+      color: "rose",
       price: "From $5k",
     },
     {
-      icon: <Globe size={24} />,
-      title: "Digital Strategy",
-      subtitle: "Growth & SEO",
-      description: "Data-driven strategies for UK & USA markets. SEO architecture, content strategy, and conversion rate optimization.",
-      features: ["Technical SEO", "Content Architecture", "CRO", "Analytics", "A/B Testing"],
+      icon: <Layers size={24} />,
+      title: "Branding",
+      subtitle: "Complete brand identity systems",
+      description:
+        "From colors to typography and brand style guides — we create branding that builds trust and recognition.",
+      features: ["Startups", "Entrepreneurs", "Brand Guidelines"],
       color: "emerald",
       price: "From $6k",
     },
     {
-      icon: <Cpu size={24} />,
-      title: "AI & Machine Learning",
-      subtitle: "Intelligent Automation",
-      description: "Smart automation and AI-powered features. From intelligent chatbots to predictive analytics and custom ML models.",
-      features: ["NLP Solutions", "Predictive Analytics", "Computer Vision", "Chatbots", "MLOps"],
-      color: "rose",
-      price: "From $20k",
+      icon: <Code size={24} />,
+      title: "Web Design",
+      subtitle: "Professional websites that convert",
+      description:
+        "Fast, modern, and mobile-friendly websites designed to turn visitors into paying customers.",
+      features: ["Startups", "Small Businesses", "Responsive Design"],
+      color: "cyan",
+      price: "From $7k",
     },
     {
-      icon: <Shield size={24} />,
-      title: "Cybersecurity",
-      subtitle: "Enterprise Security",
-      description: "Bank-grade security implementations. Authentication, encryption, penetration testing, and GDPR/SOC2 compliance.",
-      features: ["Penetration Testing", "GDPR Compliance", "SOC2 Audit", "Encryption", "Auth Systems"],
+      icon: <Globe size={24} />,
+      title: "E-commerce Development",
+      subtitle: "Online stores built to sell",
+      description:
+        "Scalable e-commerce websites with smooth shopping experiences and high-converting product pages.",
+      features: ["Retailers", "Online Shops", "Conversion Optimization"],
+      color: "amber",
+      price: "From $9k",
+    },
+    {
+      icon: <Cpu size={24} />,
+      title: "Mobile App Development",
+      subtitle: "Apps your customers love to use",
+      description:
+        "Custom iOS and Android apps built for startups, businesses, and growing digital brands.",
+      features: ["Startups", "Businesses", "Cross-Platform Apps"],
+      color: "indigo",
+      price: "From $12k",
+    },
+    {
+      icon: <Code size={24} />,
+      title: "Custom Development",
+      subtitle: "Tailored digital solutions",
+      description:
+        "Custom web applications and software solutions built around your unique business goals.",
+      features: ["Enterprises", "SaaS Platforms", "Bespoke Systems"],
+      color: "purple",
+      price: "From $15k",
+    },
+    {
+      icon: <Share2 size={24} />,
+      title: "Social Media Marketing",
+      subtitle: "Grow your audience & sales",
+      description:
+        "Data-driven social media campaigns that help brands increase engagement, leads, and conversions.",
+      features: ["Brands", "Startups", "Paid & Organic"],
+      color: "rose",
+      price: "From $4k",
+    },
+    {
+      icon: <TrendingUp size={24} />,
+      title: "Lead Generation",
+      subtitle: "Get qualified leads consistently",
+      description:
+        "Targeted lead generation campaigns designed to bring you high-quality customers ready to buy.",
+      features: ["B2B Companies", "Service Providers", "Funnel Optimization"],
+      color: "emerald",
+      price: "From $5k",
+    },
+    {
+      icon: <Globe size={24} />,
+      title: "SEO",
+      subtitle: "Rank higher on Google",
+      description:
+        "SEO strategies that increase your visibility, drive organic traffic, and grow long-term revenue.",
+      features: ["Local Businesses", "E-commerce Stores", "Technical SEO"],
       color: "cyan",
-      price: "From $10k",
+      price: "From $4k",
+    },
+    {
+      icon: <Play size={24} />,
+      title: "Video Editing",
+      subtitle: "Content that grabs attention fast",
+      description:
+        "Professional editing for reels, ads, YouTube videos, and social media content that converts viewers into customers.",
+      features: ["Content Creators", "Ad Campaigns", "Reels & Shorts"],
+      color: "amber",
+      price: "From $3k",
     },
   ];
 
@@ -426,8 +492,8 @@ const ServicesGrid = () => {
           </h2>
 
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-            Comprehensive digital solutions tailored to your business objectives.
-            Each service is delivered with precision, transparency, and measurable results.
+            From web design to app development and marketing, our end-to-end digital
+            services are built to grow your business.
           </p>
 
           <motion.div

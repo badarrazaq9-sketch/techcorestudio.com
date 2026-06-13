@@ -2,67 +2,37 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { MapPin, Sparkles, ArrowRight, Mail, Phone, Clock } from "lucide-react";
+import { MapPin, Sparkles, ArrowRight } from "lucide-react";
 import Link from "next/link";
-
-const contactInfo = [
-  { value: "hello@techcorestudio.com", label: "Email Us", icon: <Mail size={16} /> },
-  { value: "+44 20 7946 0958", label: "UK Office", icon: <Phone size={16} /> },
-  { value: "+1 212 555 0199", label: "US Office", icon: <Phone size={16} /> },
-  { value: "24/7 Support", label: "Always Online", icon: <Clock size={16} /> },
-];
 
 const locations = [
   { city: "London", country: "UK", flag: "🇬🇧" },
   { city: "New York", country: "USA", flag: "🇺🇸" },
 ];
 
-const contactSchema = {
+const pricingSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      name: "TechCore Studio",
-      url: "https://techcore.studio",
-      logo: "https://techcore.studio/TechCoreStudio Logo-01.jpg",
-      description: "Premium UK & USA-based software house delivering enterprise-grade digital solutions.",
-      foundingDate: "2014",
-      address: [
-        { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
-        { "@type": "PostalAddress", addressLocality: "New York", addressCountry: "US" },
-      ],
-      contactPoint: [
-        { "@type": "ContactPoint", telephone: "+44-20-7946-0958", contactType: "sales", areaServed: "GB", availableLanguage: ["English"] },
-        { "@type": "ContactPoint", telephone: "+1-212-555-0199", contactType: "sales", areaServed: "US", availableLanguage: ["English"] },
-      ],
-      sameAs: [
-        "https://linkedin.com/company/techcore-studio",
-        "https://twitter.com/techcorestudio",
-      ],
-    },
-    {
-      "@type": "WebSite",
-      name: "TechCore Studio",
-      url: "https://techcore.studio",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://techcore.studio/search?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
-    },
-    {
-      "@type": "ContactPage",
-      "@id": "https://techcore.studio/contact",
-      url: "https://techcore.studio/contact",
-      name: "Contact TechCore Studio",
-      description: "Get in touch with TechCore Studio. Reach out to discuss your project and transform your digital presence.",
+      "@type": "WebPage",
+      "@id": "https://techcore.studio/pricing",
+      url: "https://techcore.studio/pricing",
+      name: "Pricing | TechCore Studio",
+      description: "Transparent pricing for TechCore Studio services. Choose a package that fits your stage of growth with no hidden fees.",
       isPartOf: { "@type": "WebSite", "@id": "https://techcore.studio" },
-      mainEntity: { "@type": "Organization", "@id": "https://techcore.studio" },
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://techcore.studio#organization",
+      name: "TechCore Studio",
+      url: "https://techcore.studio",
+      logo: "https://techcore.studio/logo.png",
+      description: "Premium UK & USA-based software house delivering enterprise-grade digital solutions.",
     },
   ],
 };
 
-export default function ContactHero() {
+export default function PricingHero() {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
   const y = useTransform(scrollY, [0, 400], [0, 100]);
@@ -88,10 +58,9 @@ export default function ContactHero() {
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-32 pb-20">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }}
       />
 
-      {/* Floating gradient orbs with mouse parallax */}
       <motion.div
         className="absolute top-20 left-[10%] w-[500px] h-[500px] rounded-full blur-3xl"
         style={{
@@ -121,12 +90,10 @@ export default function ContactHero() {
         transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
       />
 
-      {/* Main Content */}
       <motion.div
         className="relative z-10 max-w-6xl mx-auto px-6 text-center"
         style={{ opacity: smoothOpacity, y: smoothY, scale }}
       >
-        {/* Location Badge */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -140,9 +107,7 @@ export default function ContactHero() {
                 <span key={loc.city} className="flex items-center gap-1">
                   <span>{loc.flag}</span>
                   <span className="text-gray-400">{loc.city}</span>
-                  {i < locations.length - 1 && (
-                    <span className="text-gray-600 mx-1">•</span>
-                  )}
+                  {i < locations.length - 1 && <span className="text-gray-600 mx-1">•</span>}
                 </span>
               ))}
             </span>
@@ -150,11 +115,10 @@ export default function ContactHero() {
           <span className="w-px h-4 bg-white/10" />
           <span className="flex items-center gap-1.5 text-[#5d67f2]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#5d67f2] animate-pulse" />
-            Contact Us
+            Transparent Pricing
           </span>
         </motion.div>
 
-        {/* Premium Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -162,11 +126,10 @@ export default function ContactHero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#5d67f2]/10 to-[#8b5cf6]/10 border border-[#5d67f2]/20 text-sm text-[#8b9dff] mb-10"
         >
           <Sparkles size={14} />
-          <span>Let&apos;s Build Together</span>
+          <span>Choose the right package for your stage</span>
           <Sparkles size={14} />
         </motion.div>
 
-        {/* Main Title */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -175,64 +138,66 @@ export default function ContactHero() {
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] tracking-tight">
             <motion.span
-              initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
+              initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 0.9, delay: 0.6 }}
               className="block"
             >
-              Let&apos;s Start a{" "}
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-[#5d67f2] via-[#8b5cf6] to-[#ec4899] bg-clip-text text-transparent">
-                  Conversation
-                </span>
-                <motion.svg
-                  className="absolute -bottom-3 left-0 w-full"
-                  height="10"
-                  viewBox="0 0 300 10"
-                  fill="none"
-                  initial={{ pathLength: 0, opacity: 0 }}
-                  animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{ duration: 1.2, delay: 1.4 }}
-                >
-                  <motion.path
-                    d="M2 8C75 2 225 2 298 8"
-                    stroke="url(#contactGradient)"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    fill="none"
-                  />
-                  <defs>
-                    <linearGradient id="contactGradient" x1="0" y1="0" x2="300" y2="0">
-                      <stop stopColor="#5d67f2" />
-                      <stop offset="0.5" stopColor="#8b5cf6" />
-                      <stop offset="1" stopColor="#ec4899" />
-                    </linearGradient>
-                  </defs>
-                </motion.svg>
+              Transparent
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.9, delay: 0.8 }}
+              className="block mt-2 relative"
+            >
+              <span className="bg-gradient-to-r from-[#5d67f2] via-[#8b5cf6] to-[#ec4899] bg-clip-text text-transparent">
+                Pricing
               </span>
+              <motion.svg
+                className="absolute -bottom-3 left-0 w-full"
+                height="10"
+                viewBox="0 0 300 10"
+                fill="none"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 1 }}
+                transition={{ duration: 1.2, delay: 1.2 }}
+              >
+                <motion.path
+                  d="M2 8C75 2 225 2 298 8"
+                  stroke="url(#pricingGradient)"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+                <defs>
+                  <linearGradient id="pricingGradient" x1="0" y1="0" x2="300" y2="0">
+                    <stop stopColor="#5d67f2" />
+                    <stop offset="0.5" stopColor="#8b5cf6" />
+                    <stop offset="1" stopColor="#ec4899" />
+                  </linearGradient>
+                </defs>
+              </motion.svg>
             </motion.span>
           </h1>
         </motion.div>
 
-        {/* Description */}
         <motion.p
           className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          Have a project in mind? We&apos;d love to hear from you. Reach out and let&apos;s discuss
-          how we can help transform your digital presence with cutting-edge solutions.
+          Choose a package that fits your stage of growth. No hidden fees.
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
         >
-          <Link href="mailto:hello@techcorestudio.com">
+          <Link href="/contact">
             <motion.button
               whileHover={{
                 scale: 1.03,
@@ -241,7 +206,7 @@ export default function ContactHero() {
               whileTap={{ scale: 0.97 }}
               className="group px-8 py-4 bg-gradient-to-r from-[#5d67f2] to-[#8b5cf6] text-white rounded-full font-semibold flex items-center gap-3 hover:from-[#4f57d9] hover:to-[#7c4ce6] transition-all duration-500 shadow-lg shadow-[#5d67f2]/25"
             >
-              Send an Email
+              Talk To Sales
               <ArrowRight
                 size={18}
                 className="group-hover:translate-x-1 transition-transform duration-300"
@@ -249,7 +214,7 @@ export default function ContactHero() {
             </motion.button>
           </Link>
 
-          <Link href="tel:+442079460958">
+          <Link href="/services">
             <motion.button
               whileHover={{
                 scale: 1.03,
@@ -258,39 +223,9 @@ export default function ContactHero() {
               whileTap={{ scale: 0.97 }}
               className="group px-8 py-4 rounded-full border border-white/20 text-white font-semibold hover:border-[#5d67f2]/50 transition-all duration-500 flex items-center gap-3 backdrop-blur-sm"
             >
-              <Phone size={18} />
-              Call Us Now
+              Explore Services
             </motion.button>
           </Link>
-        </motion.div>
-
-        {/* Contact Info Cards */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gradient-to-b from-white/[0.08] to-transparent rounded-2xl overflow-hidden max-w-3xl mx-auto backdrop-blur-sm border border-white/[0.06]"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.3 }}
-        >
-          {contactInfo.map((info, i) => (
-            <motion.div
-              key={info.label}
-              className="bg-[#08080e]/60 backdrop-blur-md p-6 text-center group hover:bg-white/[0.04] transition-all duration-500 cursor-default"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.4 + i * 0.1, duration: 0.5 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="flex justify-center mb-2 text-[#5d67f2] group-hover:text-[#8b5cf6] transition-colors duration-300">
-                {info.icon}
-              </div>
-              <div className="text-sm md:text-base font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#5d67f2] group-hover:to-[#8b5cf6] transition-all duration-300">
-                {info.value}
-              </div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider group-hover:text-gray-400 transition-colors">
-                {info.label}
-              </div>
-            </motion.div>
-          ))}
         </motion.div>
       </motion.div>
 

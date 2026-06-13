@@ -185,7 +185,32 @@ export default function ServicesHero() {
         </motion.div> */}
       </motion.div>
 
-      {/* <ScrollIndicator label="Explore Services" /> */}
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.8 }}
+      >
+        <span className="text-xs text-gray-600 uppercase tracking-[0.2em]">
+          Explore
+        </span>
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          className="w-6 h-10 rounded-full border border-white/20 flex items-start justify-center p-2"
+        >
+          <motion.div
+            className="w-1 h-2 rounded-full bg-[#5d67f2]"
+            animate={{ opacity: [1, 0.3, 1], y: [0, 8, 0] }}
+            transition={{
+              duration: 2.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

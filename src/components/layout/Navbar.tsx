@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
+  { name: "Pricing", href: "/pricing" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
   { name: "Portfolio", href: "/portfolio" },
@@ -39,15 +40,15 @@ export default function Navbar() {
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-[#08080e]/85 backdrop-blur-2xl border-b border-white/[0.06] py-3 shadow-2xl shadow-black/20"
-          : "bg-transparent py-6"
+          ? "bg-[#08080e]/85 backdrop-blur-2xl border-b border-white/[0.06] py-0 shadow-2xl shadow-black/20"
+          : "bg-transparent py-2"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo → Homepage */}
         <motion.div whileHover={{ scale: 1.02 }} className="cursor-pointer">
           <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-[120px] h-[90px]">
+            <div className="relative w-[120px] h-[90px] md:w-[130px] md:h-[100px]">
               <Image
                 src="/TechCoreStudio Logo-01.png"
                 alt="TechCore Studio"
@@ -105,7 +106,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.5 }}
           >
-            <Link href="/services">
+            <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.03, boxShadow: "0 0 30px rgba(93, 103, 242, 0.3)" }}
                 whileTap={{ scale: 0.97 }}

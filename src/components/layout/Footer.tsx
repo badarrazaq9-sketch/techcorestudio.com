@@ -14,11 +14,18 @@ import Link from "next/link"; // ← ADD THIS IMPORT
 
 const footerLinks = {
   Services: [
-    { name: "Web Development", href: "/services" },
-    { name: "Mobile Apps", href: "/services" },
-    { name: "UI/UX Design", href: "/services" },
-    { name: "Cloud Solutions", href: "/services" },
-    { name: "AI Integration", href: "/services" },
+    { name: "Logo Design", href: "/services" },
+    { name: "3D Logo Design", href: "/services" },
+    { name: "Mascot Logo Design", href: "/services" },
+    { name: "Branding", href: "/services" },
+    { name: "Web Design", href: "/services" },
+    { name: "E-commerce Development", href: "/services" },
+    { name: "Mobile App Development", href: "/services" },
+    { name: "Custom Development", href: "/services" },
+    { name: "Social Media Marketing", href: "/services" },
+    { name: "Lead Generation", href: "/services" },
+    { name: "SEO", href: "/services" },
+    { name: "Video Editing", href: "/services" },
   ],
   Company: [
     { name: "About Us", href: "/about" },
@@ -102,12 +109,11 @@ export default function Footer() {
             
             </Link>
             <p className="text-gray-400 mb-1 leading-relaxed text-sm">
-              Premium software house with offices in London, UK and New York,
-              USA.
+              Premium digital studio serving London, UK and New York, USA.
             </p>
             <p className="text-gray-500 mb-3 leading-relaxed text-sm">
-              Crafting digital excellence through innovative design and
-              cutting-edge technology.
+              From logos and branding to web, app, and marketing services,
+              we help businesses grow with premium digital solutions.
             </p>
 
             <div className="flex items-center gap-2 mb-4">
