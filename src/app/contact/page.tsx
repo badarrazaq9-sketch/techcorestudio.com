@@ -102,7 +102,7 @@ export default function ContactPage() {
     <div className="min-h-screen text-white selection:bg-[#5d67f2]/30 bg-[#08080e]">
       <Head>
         <title>Contact Us | TechCore Studio - UK & USA Software House</title>
-        <meta name="description" content="Get in touch with TechCore Studio. Offices in London and New York. Let's discuss your next project." />
+        <meta name="description" content="Get in touch with TechCore Studio. Offices in London and South Carolina. Let's discuss your next project." />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}

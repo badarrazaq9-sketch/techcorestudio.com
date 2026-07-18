@@ -82,7 +82,7 @@ export default function AboutSection() {
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
               TechCore Studio is a premium software development company with
-              offices in London and New York. We specialize in building scalable,
+              offices in London and South Carolina. We specialize in building scalable,
               high-performance digital products for enterprises worldwide.
             </p>
             <p className="text-gray-400 leading-relaxed mb-8">

@@ -68,7 +68,7 @@ const homeSchema = {
       url: "https://techcorestudio.com",
       name: "TechCore Studio | Premium Software House UK & USA",
       description:
-        "Premium software house with offices in London, UK and New York, USA. Crafting digital excellence through innovative design and cutting-edge technology.",
+        "Premium software house with offices in London, UK and South Carolina, USA. Crafting digital excellence through innovative design and cutting-edge technology.",
       isPartOf: {
         "@type": "WebSite",
         "@id": "https://techcorestudio.com",

@@ -63,7 +63,7 @@ export default function ServicesHero() {
           className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-sm text-gray-300 mb-8 backdrop-blur-sm"
         >
           <MapPin size={14} className="text-[#5d67f2]" />
-          <span className="text-gray-400">London, UK • New York, USA</span>
+          <span className="text-gray-400">London, UK • South Carolina, USA</span>
           <span className="w-px h-4 bg-white/10" />
           <span className="flex items-center gap-1.5 text-[#5d67f2]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#5d67f2] animate-pulse" />

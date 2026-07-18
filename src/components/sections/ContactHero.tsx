@@ -8,13 +8,13 @@ import Link from "next/link";
 const contactInfo = [
   { value: "hello@techcorestudio.com", label: "Email Us", icon: <Mail size={16} /> },
   { value: "+44 20 7946 0958", label: "UK Office", icon: <Phone size={16} /> },
-  { value: "+1 212 555 0199", label: "US Office", icon: <Phone size={16} /> },
+  { value: "8434109324", label: "US Office", icon: <Phone size={16} /> },
   { value: "24/7 Support", label: "Always Online", icon: <Clock size={16} /> },
 ];
 
 const locations = [
   { city: "London", country: "UK", flag: "🇬🇧" },
-  { city: "New York", country: "USA", flag: "🇺🇸" },
+  { city: "South Carolina", country: "USA", flag: "🇺🇸" },
 ];
 
 const contactSchema = {
@@ -29,7 +29,7 @@ const contactSchema = {
       foundingDate: "2014",
       address: [
         { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
-        { "@type": "PostalAddress", addressLocality: "New York", addressCountry: "US" },
+        { "@type": "PostalAddress", addressLocality: "South Carolina", addressCountry: "US" },
       ],
       contactPoint: [
         { "@type": "ContactPoint", telephone: "+44-20-7946-0958", contactType: "sales", areaServed: "GB", availableLanguage: ["English"] },

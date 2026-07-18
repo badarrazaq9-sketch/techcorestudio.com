@@ -25,10 +25,10 @@ export default function ContactCTA() {
             </span>
           </h2>
           <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
-            Drop us a line at hello@techcore.studio and we'll get back to you within 24 hours.
+            Drop us a line at davidanderson@techcorestudio.com and we'll get back to you within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="mailto:hello@techcore.studio">
+            <Link href="mailto:davidanderson@techcorestudio.com">
               <motion.button
                 whileHover={{ scale: 1.03, boxShadow: "0 0 40px rgba(93, 103, 242, 0.4)" }}
                 whileTap={{ scale: 0.97 }}

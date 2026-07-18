@@ -14,7 +14,7 @@ const stats = [
 
 const locations = [
   { city: "London", country: "UK", flag: "🇬🇧" },
-  { city: "New York", country: "USA", flag: "🇺🇸" },
+  { city: "South Carolina", country: "USA", flag: "🇺🇸" },
 ];
 
 const aboutSchema = {
@@ -35,7 +35,7 @@ const aboutSchema = {
         },
         {
           "@type": "PostalAddress",
-          addressLocality: "New York",
+          addressLocality: "South Carolina",
           addressCountry: "US",
         },
       ],
@@ -73,7 +73,7 @@ const aboutSchema = {
       "@id": "https://techcore.studio/about",
       url: "https://techcore.studio/about",
       name: "About TechCore Studio",
-      description: "Learn about TechCore Studio, a premium software house with offices in London and New York. We transform complex challenges into elegant, scalable digital solutions.",
+      description: "Learn about TechCore Studio, a premium software house with offices in London and South Carolina. We transform complex challenges into elegant, scalable digital solutions.",
       isPartOf: {
         "@type": "WebSite",
         "@id": "https://techcore.studio",
@@ -245,7 +245,7 @@ export default function AboutHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          TechCore Studio is a premium software house with offices in London and New York.
+          TechCore Studio is a premium software house with offices in London and South Carolina.
           We transform complex challenges into elegant, scalable digital solutions that drive global growth.
         </motion.p>
 

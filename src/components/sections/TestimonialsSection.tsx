@@ -24,7 +24,7 @@ const testimonials = [
     name: "Marcus Chen",
     role: "Head of Digital",
     company: "Nexus Retail Group",
-    location: "New York, USA",
+    location: "South Carolina, USA",
     avatar: "MC",
     rating: 5,
     text: "We interviewed 12 agencies before choosing TechCore. The difference was immediate — they challenged our brief, proposed better architectures, and delivered a headless commerce solution that handles 10x our peak traffic without breaking a sweat.",

@@ -20,7 +20,7 @@ const differentiators = [
     icon: <Globe size={24} />,
     title: "UK & USA Presence",
     description:
-      "Dual-headquartered in London and New York, we offer timezone-friendly collaboration and local market expertise for both European and North American clients.",
+      "Dual-headquartered in London and South Carolina, we offer timezone-friendly collaboration and local market expertise for both European and North American clients.",
     stat: "2 Offices",
     gradient: "from-[#5d67f2] to-[#8b5cf6]",
     bg: "bg-[#5d67f2]/10",

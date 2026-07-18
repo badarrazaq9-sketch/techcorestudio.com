@@ -14,7 +14,7 @@ const portfolioStats = [
 
 const locations = [
   { city: "London", country: "UK", flag: "🇬🇧" },
-  { city: "New York", country: "USA", flag: "🇺🇸" },
+  { city: "South Carolina", country: "USA", flag: "🇺🇸" },
 ];
 
 const portfolioSchema = {
@@ -29,7 +29,7 @@ const portfolioSchema = {
       foundingDate: "2014",
       address: [
         { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
-        { "@type": "PostalAddress", addressLocality: "New York", addressCountry: "US" },
+        { "@type": "PostalAddress", addressLocality: "South Carolina", addressCountry: "US" },
       ],
       contactPoint: [
         { "@type": "ContactPoint", telephone: "+44-20-7946-0958", contactType: "sales", areaServed: "GB", availableLanguage: ["English"] },

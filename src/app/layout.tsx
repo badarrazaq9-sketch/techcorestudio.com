@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     template: "%s | TechCore Studio",
   },
   description:
-    "Premium software house with offices in London, UK and New York, USA. Specializing in Next.js, React, AI integration, and enterprise web development. 150+ global clients, 99% satisfaction rate.",
+    "Premium software house with offices in London, UK and South Carolina, USA. Specializing in Next.js, React, AI integration, and enterprise web development. 150+ global clients, 99% satisfaction rate.",
 
   keywords: [
     "software house UK",
@@ -79,9 +79,9 @@ export const metadata: Metadata = {
     "digital agency UK",
     "enterprise software UK",
     "software house USA",
-    "web development New York",
+    "web development South Carolina",
     "app development USA",
-    "software company New York",
+    "software company South Carolina",
     "digital agency USA",
     "enterprise software USA",
     "Next.js development",
@@ -106,7 +106,7 @@ export const metadata: Metadata = {
     siteName: "TechCore Studio",
     title: "TechCore Studio | UK & USA Software House",
     description:
-      "Premium software house delivering enterprise-grade digital solutions from London and New York.",
+      "Premium software house delivering enterprise-grade digital solutions from London and South Carolina.",
     images: [
       {
         url: "/og-image.jpg",

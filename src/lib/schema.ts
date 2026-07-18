@@ -55,11 +55,11 @@ export function getOrganizationSchema() {
       // USA Office
       {
         "@type": "Place",
-        name: "TechCore Studio New York",
+        name: "TechCore Studio South Carolina",
         address: {
           "@type": "PostalAddress",
           streetAddress: "WeWork, 1460 Broadway",
-          addressLocality: "New York",
+          addressLocality: "South Carolina",
           addressRegion: "NY",
           postalCode: "10036",
           addressCountry: "US",
@@ -89,7 +89,7 @@ export function getOrganizationSchema() {
       },
       {
         "@type": "ContactPoint",
-        email: "hello@techcore.studio",
+        email: "davidanderson@techcorestudio.com",
         contactType: "customer service",
         availableLanguage: ["English"],
       },
@@ -167,7 +167,7 @@ export function getLocalBusinessSchema() {
       },
       {
         "@type": "City",
-        name: "New York",
+        name: "South Carolina",
       },
     ],
     serviceType: [
@@ -327,7 +327,7 @@ export function getContactPageSchema() {
       "@type": "Organization",
       name: "TechCore Studio",
       telephone: ["+44-20-7946-0958", "+1-212-555-0199"],
-      email: "hello@techcore.studio",
+      email: "davidanderson@techcorestudio.com",
       address: [
         {
           "@type": "PostalAddress",
@@ -340,7 +340,7 @@ export function getContactPageSchema() {
         {
           "@type": "PostalAddress",
           addressCountry: "US",
-          addressLocality: "New York",
+          addressLocality: "South Carolina",
           addressRegion: "NY",
           streetAddress: "WeWork, 1460 Broadway",
           postalCode: "10036",

@@ -23,7 +23,7 @@ const stats = [
 
 const locations = [
   { city: "London", country: "UK", flag: "🇬🇧" },
-  { city: "New York", country: "USA", flag: "🇺🇸" },
+  { city: "South Carolina", country: "USA", flag: "🇺🇸" },
 ];
 const heroSchema = {
   "@context": "https://schema.org",
@@ -43,7 +43,7 @@ const heroSchema = {
         },
         {
           "@type": "PostalAddress",
-          addressLocality: "New York",
+          addressLocality: "South Carolina",
           addressCountry: "US",
         },
       ],

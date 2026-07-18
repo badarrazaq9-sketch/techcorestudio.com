@@ -105,7 +105,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.5 }}
           >
-            <Link href="/services">
+            <Link  href="#contact">
               <motion.button
                 whileHover={{ scale: 1.03, boxShadow: "0 0 30px rgba(93, 103, 242, 0.3)" }}
                 whileTap={{ scale: 0.97 }}
@@ -157,7 +157,7 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
-              <Link href="/services" onClick={() => setIsOpen(false)}>
+              <Link  href="#contact" onClick={() => setIsOpen(false)}>
                 <button className="mt-4 w-full py-3 bg-white text-[#08080e] rounded-full font-semibold hover:bg-gray-100 transition-colors">
                   Get Started
                 </button>

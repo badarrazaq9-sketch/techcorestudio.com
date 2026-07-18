@@ -15,10 +15,10 @@ const offices = [
     timezone: "GMT",
   },
   {
-    city: "New York",
+    city: "South Carolina",
     country: "United States",
-    address: "Digital Tower, 456 Broadway, New York, NY 10013",
-    phone: "+1 212 555 0199",
+    address: "Digital Tower, 456 Broadway, South Carolina, NY 10013",
+    phone: "8434109324",
     flag: "🇺🇸",
     timezone: "EST",
   },
@@ -40,7 +40,7 @@ export default function GlobalPresence() {
               </span>
             </>
           }
-          description="With offices in London and New York, we deliver round-the-clock service to clients across the globe."
+          description="With offices in London and South Carolina, we deliver round-the-clock service to clients across the globe."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">

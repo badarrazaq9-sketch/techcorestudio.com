@@ -102,7 +102,7 @@ export default function Footer() {
             
             </Link>
             <p className="text-gray-400 mb-1 leading-relaxed text-sm">
-              Premium software house with offices in London, UK and New York,
+              Premium software house with offices in London, UK and South Carolina,
               USA.
             </p>
             <p className="text-gray-500 mb-3 leading-relaxed text-sm">
@@ -113,7 +113,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <MapPin size={14} className="text-[#5d67f2]" />
               <span className="text-sm text-gray-400">
-                London, UK • New York, USA
+                London, UK • South Carolina, USA
               </span>
             </div>
 

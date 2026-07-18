@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: <MapPin size={20} />,
     label: "Visit Us",
-    value: "London, UK & New York, USA",
+    value: "London, UK & South Carolina, USA",
     color: "text-[#5d67f2]",
     bg: "bg-[#5d67f2]/10",
     border: "border-[#5d67f2]/20",
@@ -26,7 +26,7 @@ const contactInfo = [
   {
     icon: <Mail size={20} />,
     label: "Email Us",
-    value: "hello@techcore.studio",
+    value: "davidanderson@techcorestudio.com",
     color: "text-[#8b5cf6]",
     bg: "bg-[#8b5cf6]/10",
     border: "border-[#8b5cf6]/20",
@@ -76,7 +76,7 @@ const contactSchema = {
     "@type": "Organization",
     name: "TechCore Studio",
     telephone: ["+44-20-7946-0958", "+1-212-555-0199"],
-    email: "hello@techcore.studio",
+    email: "davidanderson@techcorestudio.com",
     address: [
       {
         "@type": "PostalAddress",
@@ -85,7 +85,7 @@ const contactSchema = {
       },
       {
         "@type": "PostalAddress",
-        addressLocality: "New York",
+        addressLocality: "South Carolina",
         addressCountry: "US",
       },
     ],
@@ -104,15 +104,30 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      setIsSubmitted(true);
+    } else {
+      alert(data.error || "Failed to send message. Please try again.");
+    }
+  } catch (error) {
+    alert("Network error. Please check your connection and try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement

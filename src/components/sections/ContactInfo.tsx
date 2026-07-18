@@ -8,13 +8,13 @@ const contacts = [
   {
     icon: <Mail size={24} />,
     title: "Email Us",
-    lines: ["hello@techcore.studio", "careers@techcore.studio"],
+    lines: ["davidanderson@techcorestudio.com", ""],
     color: "indigo",
   },
   {
     icon: <Phone size={24} />,
     title: "Call Us",
-    lines: ["+44 20 7946 0958 (UK)", "+1 212 555 0199 (USA)"],
+    lines: ["+44 20 7946 0958 (UK)", "8434109324 (USA)"],
     color: "purple",
   },
   {

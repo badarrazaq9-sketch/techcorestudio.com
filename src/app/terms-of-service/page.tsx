@@ -88,7 +88,7 @@ Response times vary based on support tier and issue severity.`
     content: `These Terms shall be governed by and construed in accordance with:
 
 For UK Clients: The laws of England and Wales
-For US Clients: The laws of the State of New York
+For US Clients: The laws of the State of South Carolina
 For EU Clients: The laws of the relevant EU member state
 
 Any disputes shall be resolved through good faith negotiation, followed by mediation if necessary. Legal proceedings shall be brought in the courts of the applicable jurisdiction.

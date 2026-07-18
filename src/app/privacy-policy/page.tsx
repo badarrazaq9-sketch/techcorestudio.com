@@ -102,7 +102,7 @@ To exercise these rights, contact us at privacy@techcorestudio.com`
 
 TechCore Studio
 Email: privacy@techcorestudio.com
-Address: London, UK & New York, USA
+Address: London, UK & South Carolina, USA
 
 Data Protection Officer: dpo@techcorestudio.com
 
