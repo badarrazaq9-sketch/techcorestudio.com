@@ -64,7 +64,7 @@ const socialLinks = [
   },
   {
     icon: <Mail size={18} />,
-    href: "mailto:hello@techcorestudio.com",
+    href: "mailto:info@techcorestudio.com",
     label: "Email",
     color: "hover:bg-[#06b6d4]/20 hover:text-[#06b6d4]",
   },

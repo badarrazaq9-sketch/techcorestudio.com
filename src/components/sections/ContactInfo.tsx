@@ -14,7 +14,7 @@ const contacts = [
   {
     icon: <Phone size={24} />,
     title: "Call Us",
-    lines: ["+44 20 7946 0958 (UK)", "8434109324 (USA)"],
+    lines: ["+44 20 7946 0958 (UK)", "+1 (843) 410-9324(USA)"],
     color: "purple",
   },
   {

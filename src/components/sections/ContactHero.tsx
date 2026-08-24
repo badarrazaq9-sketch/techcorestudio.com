@@ -6,7 +6,7 @@ import { MapPin, Sparkles, ArrowRight, Mail, Phone, Clock } from "lucide-react";
 import Link from "next/link";
 
 const contactInfo = [
-  { value: "hello@techcorestudio.com", label: "Email Us", icon: <Mail size={16} /> },
+  { value: "info@techcorestudio.com", label: "Email Us", icon: <Mail size={16} /> },
   { value: "+44 20 7946 0958", label: "UK Office", icon: <Phone size={16} /> },
   { value: "8434109324", label: "US Office", icon: <Phone size={16} /> },
   { value: "24/7 Support", label: "Always Online", icon: <Clock size={16} /> },
@@ -232,7 +232,7 @@ export default function ContactHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
         >
-          <Link href="mailto:hello@techcorestudio.com">
+          <Link href="mailto:info@techcorestudio.com">
             <motion.button
               whileHover={{
                 scale: 1.03,
