@@ -106,25 +106,93 @@ export default function ContactSection() {
 
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
+
+  console.log("=================================");
+  console.log("📤 CONTACT FORM SUBMISSION STARTED");
+  console.log("📦 Form data:", formData);
+  console.log("=================================");
+
   setIsSubmitting(true);
 
   try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    console.log("🌐 Sending request to /api/contact...");
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(formData),
     });
 
-    const data = await response.json();
+    console.log("📡 Response status:", response.status);
+    console.log("📡 Response OK:", response.ok);
 
-    if (response.ok) {
+    const responseText = await response.text();
+
+    console.log("📄 Server response:");
+    console.log(responseText);
+
+    let data: {
+      success?: boolean;
+      databaseSaved?: boolean;
+      emailSent?: boolean;
+      recordId?: number;
+      error?: string;
+      warning?: string;
+      details?: string;
+    };
+
+    try {
+      data = JSON.parse(responseText);
+    } catch (jsonError) {
+      console.error("❌ SERVER DID NOT RETURN JSON");
+      console.error("❌ JSON error:", jsonError);
+      console.error("❌ Raw response:", responseText);
+
+      alert(
+        "Server returned an invalid response. Open the browser console and check the error."
+      );
+
+      return;
+    }
+
+    console.log("📊 Parsed API response:", data);
+
+    if (response.ok && data.success) {
+      console.log("=================================");
+      console.log("✅ CONTACT FORM SUCCESS");
+      console.log("💾 Database saved:", data.databaseSaved);
+      console.log("📧 Email sent:", data.emailSent);
+      console.log("🆔 Record ID:", data.recordId);
+      console.log("=================================");
+
       setIsSubmitted(true);
     } else {
-      alert(data.error || "Failed to send message. Please try again.");
+      console.error("=================================");
+      console.error("❌ CONTACT FORM FAILED");
+      console.error("❌ Error:", data.error);
+      console.error("❌ Warning:", data.warning);
+      console.error("❌ Details:", data.details);
+      console.error("=================================");
+
+      alert(
+        data.error ||
+          data.warning ||
+          "Failed to send message. Please try again."
+      );
     }
   } catch (error) {
-    alert("Network error. Please check your connection and try again.");
+    console.error("=================================");
+    console.error("❌ CONTACT FORM NETWORK ERROR");
+    console.error(error);
+    console.error("=================================");
+
+    alert(
+      "Network error. Please check your connection and try again."
+    );
   } finally {
+    console.log("🏁 Contact form submission finished.");
     setIsSubmitting(false);
   }
 };

@@ -48,7 +48,7 @@ const homeSchema = {
         },
       ],
       sameAs: [
-        "https://linkedin.com/company/techcore-studio",
+        "https://www.linkedin.com/company/techcorestudio/ ",
         "https://twitter.com/techcorestudio",
       ],
     },

@@ -110,8 +110,8 @@ const serviceSchema = {
       "alternateName": "TechCore Studio - UK & USA Software House",
       "url": "https://techcorestudio.com",
       "sameAs": [
-        "https://www.linkedin.com/company/techcorestudio",
-        "https://twitter.com/techcorestudio"
+        "https://www.linkedin.com/company/techcorestudio/  ",
+        "https://www.instagram.com/techcorestudio/"
       ],
       "areaServed": {
         "@type": "GeoCircle",

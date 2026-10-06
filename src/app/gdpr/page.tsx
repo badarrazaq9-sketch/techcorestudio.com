@@ -167,8 +167,8 @@ const gdprSchema = {
         }
       ],
       sameAs: [
-        "https://www.linkedin.com/company/techcorestudio",
-        "https://twitter.com/techcorestudio",
+        "https://www.linkedin.com/company/techcorestudio/ ",
+        "https://www.instagram.com/techcorestudio/",
         "https://github.com/techcorestudio"
       ]
     },
