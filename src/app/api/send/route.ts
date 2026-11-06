@@ -1,6 +1,16 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+
+// SUPABASE DISABLED 2026-11-06 (Kelley): the live server cannot reach
+// Supabase at all (POST /api/send returned 500 "TypeError: fetch failed"
+// after ~6 minutes), so the questionnaire no longer saves to the database.
+// Submissions are EMAIL-ONLY to kelleyjackson004@gmail.com.
+// The Supabase insert block below is COMMENTED OUT in place (not deleted) —
+// re-enable it once the Supabase project is reachable again.
+// import { supabase } from "@/lib/supabase";
+
+// Single notification recipient: Kelley Jackson.
+const ADMIN_NOTIFY_EMAIL = "kelleyjackson004@gmail.com";
 
 export async function POST(req: Request) {
   console.log("");
@@ -15,30 +25,14 @@ export async function POST(req: Request) {
     const smtpPassword = process.env.SMTP_PASSWORD;
 
     console.log(
-      "   SUPABASE_URL:",
-      process.env.SUPABASE_URL ? "✓" : "❌"
-    );
-
-    console.log(
-      "   SUPABASE_SECRET_KEY:",
-      process.env.SUPABASE_SECRET_KEY ? "✓" : "❌"
-    );
-
-    console.log(
       "   SMTP_EMAIL:",
       smtpEmail ? "✓" : "❌"
     );
 
     console.log(
       "   SMTP_PASSWORD:",
-      smtpPassword ? "✓" : "❌"
+      smtpPassword ? "✓ (set)" : "❌"
     );
-
-    if (!smtpEmail || !smtpPassword) {
-      console.log(
-        "⚠️ SMTP credentials are missing. Database will still work."
-      );
-    }
 
     // ----------------------------------------
     // READ REQUEST
@@ -68,120 +62,110 @@ export async function POST(req: Request) {
     }
 
     // ----------------------------------------
-    // PREPARE DATABASE DATA
+    // DATABASE SAVE — DISABLED (Supabase unreachable)
+    // ----------------------------------------
+    //
+    // const questionnaire = {
+    //   client_name: data.clientName || null,
+    //   email: data.email || null,
+    //   phone: data.phone || null,
+    //
+    //   industry: data.industry || null,
+    //
+    //   business_name: data.businessName || null,
+    //   business_slogan: data.businessSlogan || null,
+    //
+    //   logo_choice: data.logoChoice || null,
+    //
+    //   has_website: data.hasWebsite || null,
+    //   existing_website_url: data.existingWebsiteUrl || null,
+    //
+    //   purpose: data.purpose || null,
+    //
+    //   color_preferences: data.colorPreferences || null,
+    //
+    //   competitors: data.competitors || null,
+    //
+    //   payment_integration: data.paymentIntegration || null,
+    //
+    //   specific_requirements:
+    //     data.specificRequirements || null,
+    //
+    //   content_pages: data.contentPages || null,
+    //
+    //   other_suggestions:
+    //     data.otherSuggestions || null,
+    //
+    //   has_domain: data.hasDomain || null,
+    //
+    //   domain_provider:
+    //     data.domainProvider || null,
+    //
+    //   domain_username:
+    //     data.domainUsername || null,
+    //
+    //   has_hosting:
+    //     data.hasHosting || null,
+    //
+    //   hosting_provider:
+    //     data.hostingProvider || null,
+    //
+    //   hosting_username:
+    //     data.hostingUsername || null,
+    //
+    //   notes: data.notes || null,
+    // };
+    //
+    // console.log("💾 Saving questionnaire to Supabase...");
+    //
+    // const { data: savedRecord, error: supabaseError } =
+    //   await supabase
+    //     .from("website_questionnaires")
+    //     .insert(questionnaire)
+    //     .select("id, created_at")
+    //     .single();
+    //
+    // if (supabaseError) {
+    //   console.error("");
+    //   console.error("❌ SUPABASE INSERT FAILED");
+    //   console.error("Code:", supabaseError.code);
+    //   console.error("Message:", supabaseError.message);
+    //   console.error("Details:", supabaseError.details);
+    //   console.error("Hint:", supabaseError.hint);
+    //
+    //   return NextResponse.json(
+    //     {
+    //       success: false,
+    //       databaseSaved: false,
+    //       emailSent: false,
+    //       step: "supabase",
+    //       error: supabaseError.message,
+    //     },
+    //     { status: 500 }
+    //   );
+    // }
+    //
+    // console.log("✅ Supabase record saved!");
+    // console.log("🆔 Record ID:", savedRecord?.id);
+
+    // ----------------------------------------
+    // EMAIL NOTIFICATION (email-only mode)
     // ----------------------------------------
 
-    const questionnaire = {
-      client_name: data.clientName || null,
-      email: data.email || null,
-      phone: data.phone || null,
-
-      industry: data.industry || null,
-
-      business_name: data.businessName || null,
-      business_slogan: data.businessSlogan || null,
-
-      logo_choice: data.logoChoice || null,
-
-      has_website: data.hasWebsite || null,
-      existing_website_url: data.existingWebsiteUrl || null,
-
-      purpose: data.purpose || null,
-
-      color_preferences: data.colorPreferences || null,
-
-      competitors: data.competitors || null,
-
-      payment_integration: data.paymentIntegration || null,
-
-      specific_requirements:
-        data.specificRequirements || null,
-
-      content_pages: data.contentPages || null,
-
-      other_suggestions:
-        data.otherSuggestions || null,
-
-      has_domain: data.hasDomain || null,
-
-      domain_provider:
-        data.domainProvider || null,
-
-      domain_username:
-        data.domainUsername || null,
-
-      has_hosting:
-        data.hasHosting || null,
-
-      hosting_provider:
-        data.hostingProvider || null,
-
-      hosting_username:
-        data.hostingUsername || null,
-
-      notes: data.notes || null,
-    };
-
-    // ----------------------------------------
-    // SAVE TO SUPABASE
-    // ----------------------------------------
-
-    console.log("💾 Saving questionnaire to Supabase...");
-
-    const { data: savedRecord, error: supabaseError } =
-      await supabase
-        .from("website_questionnaires")
-        .insert(questionnaire)
-        .select("id, created_at")
-        .single();
-
-    if (supabaseError) {
-      console.error("");
-      console.error("❌ SUPABASE INSERT FAILED");
-      console.error("Code:", supabaseError.code);
-      console.error("Message:", supabaseError.message);
-      console.error("Details:", supabaseError.details);
-      console.error("Hint:", supabaseError.hint);
+    // Email-only mode: without SMTP there is no delivery at all, so a
+    // missing configuration must FAIL the submission, never fake success.
+    if (!smtpEmail || !smtpPassword) {
+      console.log("❌ SMTP credentials are missing - cannot send email.");
 
       return NextResponse.json(
         {
           success: false,
-          databaseSaved: false,
           emailSent: false,
-          step: "supabase",
-          error: supabaseError.message,
+          error:
+            "Email delivery is not configured. Please try again later or contact us directly.",
         },
-        { status: 500 }
+        { status: 503 }
       );
-    }
-
-    console.log("✅ Supabase record saved!");
-    console.log("🆔 Record ID:", savedRecord?.id);
-
-    // ----------------------------------------
-    // EMAIL NOTIFICATION
-    // ----------------------------------------
-
-    const recipients = [
-      smtpEmail,
-      process.env.ADMIN_EMAIL,
-      process.env.SELLER_EMAIL,
-      process.env.PERSONAL_EMAIL,
-    ].filter(Boolean);
-
-    if (!smtpEmail || !smtpPassword || recipients.length === 0) {
-      console.log(
-        "⚠️ Email skipped because SMTP credentials are missing."
-      );
-
-      return NextResponse.json({
-        success: true,
-        databaseSaved: true,
-        emailSent: false,
-        recordId: savedRecord?.id,
-        warning:
-          "Questionnaire saved successfully, but email notification was not configured.",
-      });
     }
 
     try {
@@ -276,7 +260,7 @@ Notes
 ${data.notes || ""}
 
 --------------------------------
-Database Record ID: ${savedRecord?.id}
+Database: disabled (email-only mode, Supabase unreachable)
 --------------------------------
 
 SECURITY NOTE:
@@ -287,7 +271,7 @@ Domain and hosting passwords were intentionally NOT included in this email.
 
       await transporter.sendMail({
         from: smtpEmail,
-        to: recipients.join(","),
+        to: ADMIN_NOTIFY_EMAIL,
         subject: `New Website Workbook - ${data.clientName}`,
         text: emailText,
         replyTo: data.email,
@@ -297,9 +281,7 @@ Domain and hosting passwords were intentionally NOT included in this email.
 
       return NextResponse.json({
         success: true,
-        databaseSaved: true,
         emailSent: true,
-        recordId: savedRecord?.id,
       });
     } catch (emailError: any) {
       console.error("");
@@ -307,17 +289,20 @@ Domain and hosting passwords were intentionally NOT included in this email.
       console.error("Message:", emailError?.message);
 
       // IMPORTANT:
-      // Database was already saved.
-      // Email failure must NOT fail the questionnaire.
+      // Email-only mode: if the email fails, the submission is lost.
+      // Never fake success — return an error so the visitor sees it
+      // and the form does not pretend the questionnaire was received.
 
-      return NextResponse.json({
-        success: true,
-        databaseSaved: true,
-        emailSent: false,
-        recordId: savedRecord?.id,
-        warning:
-          "Questionnaire was saved successfully, but the email notification failed.",
-      });
+      return NextResponse.json(
+        {
+          success: false,
+          emailSent: false,
+          error:
+            emailError?.message ||
+            "Could not send the questionnaire. Please try again.",
+        },
+        { status: 503 }
+      );
     }
   } catch (error: any) {
     console.error("");
@@ -329,7 +314,6 @@ Domain and hosting passwords were intentionally NOT included in this email.
     return NextResponse.json(
       {
         success: false,
-        databaseSaved: false,
         emailSent: false,
         error: error?.message || "Unknown server error",
       },
