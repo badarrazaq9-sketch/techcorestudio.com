@@ -1774,15 +1774,7 @@ export default function AdminLeadsPage() {
 
 
 
-  /\*
 
-   \* =========================================================
-
-   \* MAIN CRM
-
-   \* =========================================================
-
-   \*/
 
 
 
@@ -1792,7 +1784,7 @@ export default function AdminLeadsPage() {
 
       <main className="min-h-screen bg-[#f4f6f8] text-gray-900">
 
-        {/\* TOP HEADER \*/}
+        {/* {/\* TOP HEADER \*/} */
 
         <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
 
@@ -1908,7 +1900,7 @@ export default function AdminLeadsPage() {
 
 
 
-          {/\* KPI \*/}
+  
 
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-7">
 
@@ -2004,7 +1996,6 @@ export default function AdminLeadsPage() {
 
 
 
-          {/\* CONTROLS \*/}
 
           <div className="bg-white border border-gray-200 rounded-2xl shadow-sm mb-6">
 
@@ -2012,7 +2003,6 @@ export default function AdminLeadsPage() {
 
               <div className="flex flex-col xl:flex-row xl:items-center gap-3">
 
-                {/\* SEARCH \*/}
 
                 <div className="relative flex-1">
 
@@ -2050,7 +2040,6 @@ export default function AdminLeadsPage() {
 
 
 
-                {/\* TABLE SELECTOR \*/}
 
                 <div className="flex items-center gap-1 bg-gray-100 rounded-xl p-1 overflow-x-auto">
 
@@ -2160,7 +2149,6 @@ export default function AdminLeadsPage() {
 
 
 
-                {/\* SORT \*/}
 
                 <select
 
@@ -2204,7 +2192,6 @@ export default function AdminLeadsPage() {
 
 
 
-            {/\* CURRENT TABLE INDICATOR \*/}
 
             <div className="px-5 py-3 border-t border-gray-100 flex items-center justify-between gap-4">
 
@@ -2258,7 +2245,6 @@ export default function AdminLeadsPage() {
 
 
 
-          {/\* LOADING \*/}
 
           {loading && (
 
@@ -2280,7 +2266,6 @@ export default function AdminLeadsPage() {
 
 
 
-          {/\* ALL TABLE \*/}
 
           {!loading &&
 
@@ -2308,7 +2293,6 @@ export default function AdminLeadsPage() {
 
 
 
-          {/\* WEBSITE TABLE \*/}
 
           {!loading &&
 
@@ -2344,7 +2328,6 @@ export default function AdminLeadsPage() {
 
 
 
-          {/\* CONTACT TABLE \*/}
 
           {!loading &&
 
@@ -2394,17 +2377,6 @@ export default function AdminLeadsPage() {
 
 }
 
-
-
-/\*
-
- \* =========================================================
-
- \* UNIFIED TABLE
-
- \* =========================================================
-
- \*/
 
 
 
@@ -2734,15 +2706,6 @@ function UnifiedLeadTable({
 
 
 
-/\*
-
- \* =========================================================
-
- \* WEBSITE TABLE
-
- \* =========================================================
-
- \*/
 
 
 
@@ -3054,15 +3017,6 @@ function WebsiteLeadTable({
 
 
 
-/\*
-
- \* =========================================================
-
- \* CONTACT TABLE
-
- \* =========================================================
-
- \*/
 
 
 
@@ -3330,15 +3284,7 @@ function ContactLeadTable({
 
 
 
-/\*
 
- \* =========================================================
-
- \* TABLE HEADER
-
- \* =========================================================
-
- \*/
 
 
 
@@ -3402,15 +3348,7 @@ function TableHeader({
 
 
 
-/\*
 
- \* =========================================================
-
- \* FILTER BUTTON
-
- \* =========================================================
-
- \*/
 
 
 
@@ -3462,15 +3400,6 @@ function FilterButton({
 
 
 
-/\*
-
- \* =========================================================
-
- \* TYPE BADGE
-
- \* =========================================================
-
- \*/
 
 
 
@@ -3518,15 +3447,7 @@ function TypeBadge({
 
 
 
-/\*
 
- \* =========================================================
-
- \* STAT CARD
-
- \* =========================================================
-
- \*/
 
 
 
@@ -3636,15 +3557,6 @@ function StatCard({
 
 
 
-/\*
-
- \* =========================================================
-
- \* INFO SECTION
-
- \* =========================================================
-
- \*/
 
 
 
@@ -3720,15 +3632,6 @@ function InfoSection({
 
 
 
-/\*
-
- \* =========================================================
-
- \* INFO ITEM
-
- \* =========================================================
-
- \*/
 
 
 
@@ -3812,16 +3715,6 @@ function InfoItem({
 
 
 
-/\*
-
- \* =========================================================
-
- \* SUMMARY CARD
-
- \* =========================================================
-
- \*/
-
 
 
 function SummaryCard({
@@ -3884,15 +3777,7 @@ function SummaryCard({
 
 
 
-/\*
 
- \* =========================================================
-
- \* AVATAR
-
- \* =========================================================
-
- \*/
 
 
 
@@ -3944,15 +3829,7 @@ function Avatar({
 
 
 
-/\*
 
- \* =========================================================
-
- \* EMPTY STATE
-
- \* =========================================================
-
- \*/
 
 
 
@@ -3992,15 +3869,7 @@ function EmptyState({
 
 
 
-/\*
 
- \* =========================================================
-
- \* SHORT DATE
-
- \* =========================================================
-
- \*/
 
 
 
@@ -4032,15 +3901,6 @@ function formatShortDate(
 
 
 
-/\*
-
- \* =========================================================
-
- \* LATEST LEAD
-
- \* =========================================================
-
- \*/
 
 
 
@@ -4092,15 +3952,7 @@ function unifiedLatest(
 
 
 
-/\*
 
- \* =========================================================
-
- \* RELATIVE DATE
-
- \* =========================================================
-
- \*/
 
 
 
@@ -4202,18 +4054,8 @@ function formatRelative(
 
 
 
-/\*
-
- \* =========================================================
-
- \* GLOBAL TABLE HEADER STYLE
-
- \* =========================================================
-
- \*/
 
 
 
-const th =
 
-  "text-left px-5 py-3.5 text-[11px] font-bold uppercase tracking-wider text-gray-400";
+const th ="text-left px-5 py-3.5 text-[11px] font-bold uppercase tracking-wider text-gray-400";
