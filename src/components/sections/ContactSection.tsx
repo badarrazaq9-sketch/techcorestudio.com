@@ -64,6 +64,7 @@ const serviceOptions = [
   "AI Integration",
   "Cloud Solutions",
   "Digital Strategy",
+  "eBook Services",
   "Other",
 ];
 

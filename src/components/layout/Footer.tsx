@@ -19,6 +19,7 @@ const footerLinks = {
     { name: "UI/UX Design", href: "/services" },
     { name: "Cloud Solutions", href: "/services" },
     { name: "AI Integration", href: "/services" },
+    { name: "eBook Services", href: "/services/ebook-services" },
   ],
   Company: [
     { name: "About Us", href: "/about" },
