@@ -12,6 +12,7 @@ import {
   Globe,
   Cpu,
   Shield,
+  BookOpen,
   ArrowUpRight,
   CheckCircle2,
   Star,
@@ -314,6 +315,16 @@ const ServicesGrid = () => {
       color: "cyan",
       price: "From $10k",
     },
+    {
+      icon: <BookOpen size={24} />,
+      title: "eBook Services",
+      subtitle: "Authors & Publishers",
+      description: "Professional eBook formatting, cover design, and publishing support. From finished manuscript to a polished Kindle, EPUB, and PDF book ready to sell.",
+      features: ["Kindle & EPUB Formatting", "Cover Design", "Publishing Setup", "Print-Ready PDF", "Author Website"],
+      color: "violet",
+      price: "From $499",
+      link: "/services/ebook-services",
+    },
   ];
 
   const colorMap: Record<string, {
@@ -378,6 +389,15 @@ const ServicesGrid = () => {
       gradient: "from-cyan-400 to-blue-500",
       hoverBorder: "group-hover:border-cyan-500/50",
       iconBg: "group-hover:bg-cyan-500/20",
+    },
+    violet: {
+      bg: "bg-violet-500/10",
+      border: "border-violet-500/20",
+      text: "text-violet-400",
+      glow: "group-hover:shadow-violet-500/20",
+      gradient: "from-violet-400 to-purple-500",
+      hoverBorder: "group-hover:border-violet-500/50",
+      iconBg: "group-hover:bg-violet-500/20",
     },
   };
 
@@ -498,10 +518,17 @@ const ServicesGrid = () => {
 
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/[0.06]">
                   <span className="text-sm text-gray-500 group-hover:text-gray-300 transition-colors">{service.price}</span>
-                  <div className={`flex items-center gap-2 text-sm font-medium text-gray-500 group-hover:text-white transition-all duration-300 ${isHovered ? "translate-x-1" : ""}`}>
-                    <span>Details</span>
-                    <ArrowUpRight size={16} className={`transition-transform duration-300 ${isHovered ? "translate-x-0.5 -translate-y-0.5" : ""}`} />
-                  </div>
+                  {"link" in service && service.link ? (
+                    <Link href={service.link} className={`flex items-center gap-2 text-sm font-medium text-gray-500 group-hover:text-white transition-all duration-300 ${isHovered ? "translate-x-1" : ""}`}>
+                      <span>Details</span>
+                      <ArrowUpRight size={16} className={`transition-transform duration-300 ${isHovered ? "translate-x-0.5 -translate-y-0.5" : ""}`} />
+                    </Link>
+                  ) : (
+                    <div className={`flex items-center gap-2 text-sm font-medium text-gray-500 group-hover:text-white transition-all duration-300 ${isHovered ? "translate-x-1" : ""}`}>
+                      <span>Details</span>
+                      <ArrowUpRight size={16} className={`transition-transform duration-300 ${isHovered ? "translate-x-0.5 -translate-y-0.5" : ""}`} />
+                    </div>
+                  )}
                 </div>
 
                 <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${colors.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />

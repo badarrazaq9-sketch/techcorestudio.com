@@ -62,7 +62,8 @@ const serviceSchema = {
         "Web Development",
         "UI/UX Design",
         "AI Integration",
-        "Cybersecurity"
+        "Cybersecurity",
+        "eBook Services"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -98,6 +99,14 @@ const serviceSchema = {
               "@type": "Service",
               "name": "Cybersecurity",
               "description": "Security audits and protection for digital assets."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "eBook Services",
+              "description": "Professional eBook formatting, cover design, and publishing support for authors."
             }
           }
         ]
@@ -158,7 +167,7 @@ const serviceSchema = {
         <title>Services | TechCore Studio - UK & USA Software House</title>
         <meta
           name="description"
-          content="Premium digital services: Web Development, UI/UX Design, AI Integration, Cybersecurity. UK & USA-based software house."
+          content="Premium digital services: Web Development, UI/UX Design, AI Integration, Cybersecurity, and eBook Services for authors. UK & USA-based software house."
         />
         {/* JSON-LD Structured Data */}
         <script
