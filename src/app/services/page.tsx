@@ -63,7 +63,18 @@ const serviceSchema = {
         "UI/UX Design",
         "AI Integration",
         "Cybersecurity",
-        "eBook Services"
+        "eBook Services",
+        "Logo Design",
+        "3D Logo Design",
+        "Mascot Logo Design",
+        "Branding",
+        "E-commerce Development",
+        "Mobile App Development",
+        "Custom Development",
+        "Social Media Marketing",
+        "Lead Generation",
+        "SEO",
+        "Video Editing"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -107,6 +118,94 @@ const serviceSchema = {
               "@type": "Service",
               "name": "eBook Services",
               "description": "Professional eBook formatting, cover design, and publishing support for authors."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Logo Design",
+              "description": "Professional, timeless logos and complete brand identities for small businesses, startups, and local brands."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "3D Logo Design",
+              "description": "Stunning 3D logos with real depth, lighting, and texture for websites, social media, video intros, and signage."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mascot Logo Design",
+              "description": "Unique, memorable mascot characters that become the friendly face of your brand."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Branding",
+              "description": "Clean, professional and consistent brand identities that help local businesses stand out and win more jobs."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "E-commerce Development",
+              "description": "User-friendly e-commerce platforms that make it simple to sell products online, handle orders, and grow revenue."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Development",
+              "description": "Fast, reliable mobile apps for iOS and Android that help businesses take bookings, sell products, and connect with customers."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Development",
+              "description": "Custom software — web applications, dashboards, portals, and automations — built around how your business actually works."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Social Media Marketing",
+              "description": "Engaging social media content and targeted ads on Facebook and Instagram that turn followers into customers."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Lead Generation",
+              "description": "Ready-to-buy customers delivered to your business using Meta ads, Google ads, and organic methods."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO",
+              "description": "Rank higher on Google so people find you first when they need your service."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Video Editing",
+              "description": "Short-form ads, reels, YouTube videos, and product content edited to hold attention and drive action."
             }
           }
         ]
