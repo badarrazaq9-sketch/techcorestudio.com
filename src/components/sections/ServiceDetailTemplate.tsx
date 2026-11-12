@@ -106,9 +106,11 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetailDat
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-10">{data.heroSub}</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="#pricing" className="px-8 py-4 rounded-full bg-gradient-to-r from-[#5d67f2] to-[#8b5cf6] font-semibold hover:opacity-90 transition-opacity">
-                View Packages
-              </a>
+              {data.packages.length > 0 && (
+                <a href="#pricing" className="px-8 py-4 rounded-full bg-gradient-to-r from-[#5d67f2] to-[#8b5cf6] font-semibold hover:opacity-90 transition-opacity">
+                  View Packages
+                </a>
+              )}
               <Link href="/contact" className="px-8 py-4 rounded-full border border-white/20 font-semibold hover:bg-white/5 transition-colors">
                 Get Started
               </Link>

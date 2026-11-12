@@ -1366,7 +1366,7 @@ export default function PricingPage() {
               Clear Prices, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5d67f2] to-[#8b5cf6]">No Surprises</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Publishing, ghostwriting, and marketing packages for authors — pick the one that fits your book.
+              Transparent packages for design, development, marketing, and publishing — pick the one that fits your project.
             </p>
           </motion.div>
         </div>
