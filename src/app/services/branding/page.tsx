@@ -1,18 +1,38 @@
-"use client";
-
+import type { Metadata } from "next";
 import ServiceDetailTemplate, { ServiceDetailData } from "@/components/sections/ServiceDetailTemplate";
+import ServiceJsonLd from "@/components/sections/ServiceJsonLd";
+
+export const metadata: Metadata = {
+  title: "Branding Services UK for Small Businesses",
+  description: "Branding services UK for small businesses. Logo, colours, fonts and a clear style guide so every touchpoint matches. From $499.",
+  alternates: { canonical: "https://techcorestudio.com/services/branding" },
+  openGraph: {
+    title: "Branding Services UK for Small Businesses",
+    description: "Branding services UK for small businesses. Logo, colours, fonts and a clear style guide so every touchpoint matches. From $499.",
+    url: "https://techcorestudio.com/services/branding",
+    siteName: "TechCore Studio",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Branding Services UK for Small Businesses",
+    description: "Branding services UK for small businesses. Logo, colours, fonts and a clear style guide so every touchpoint matches. From $499.",
+  },
+};
 
 const data: ServiceDetailData = {
   slug: "branding",
   badge: "BRANDING",
-  heroTitle: "A Brand That Builds",
-  heroHighlight: "Trust Fast",
+  heroTitle: "A Brand Your Customers",
+  heroHighlight: "Trust at First Sight",
   heroSub:
-    "We create clean, professional and consistent brand identities that help local businesses stand out, charge better prices, win more jobs and stop looking like the budget option.",
-  metaTitle: "Branding & Logo Design for Small Businesses",
+    "We build clean, consistent brand identities for local businesses in the UK and the USA. Logo, colours, fonts and a short guide, so you look professional everywhere and stop looking like the cheap option.",
+  metaTitle: "Branding Services UK for Small Businesses",
   metaDescription:
-    "Professional brand identity, logos, color palettes and visual strategy that help small businesses stand out, build trust and communicate clearly. Fast & affordable.",
+    "Branding services UK for small businesses. Logo, colours, fonts and a clear style guide so every touchpoint matches. From $499.",
   serviceType: "Branding",
+  deliverablesTitle: "Everything Your Brand Needs to Look Right",
   packages: [
     {
       name: "Essential Brand Package",
@@ -78,57 +98,68 @@ const data: ServiceDetailData = {
     },
   ],
   deliverables: [
-    "Custom logo (main + simplified versions)",
-    "Full color palette with exact codes",
-    "Professional font pairing & sizes",
-    "Brand style guide (easy PDF)",
-    "Business card design (front & back)",
-    "Social media profile & story templates",
-    "Basic letterhead & email signature",
+    "A custom logo in main and simplified versions",
+    "A full colour palette with exact codes for screen and print",
+    "A professional font pairing with sizes set out plainly",
+    "A brand style guide in an easy to read PDF",
+    "A business card design for front and back",
+    "Social profile and story templates that match your brand",
+    "A basic letterhead and email signature",
     "30 days of support after delivery",
   ],
   steps: [
     {
       n: "1",
-      title: "Kickoff Conversation",
-      text: "We talk about your business, customers, what you do best and your biggest goals.",
+      title: "Talk Through Your Business",
+      text: "We talk about your business, your customers, what you do best and the goals that matter most to you.",
     },
     {
       n: "2",
-      title: "Style & Concept Options",
-      text: "You review mood boards and early logo directions before we go deep.",
+      title: "Review Styles and Directions",
+      text: "You look at mood boards and early logo directions before we build the full identity, so nothing goes too far in the wrong direction.",
     },
     {
       n: "3",
-      title: "Full Design & Feedback",
-      text: "We create the complete brand identity and refine everything with you.",
+      title: "Shape the Full Identity",
+      text: "We build the complete brand identity and refine each part with you, from the logo to the colours, fonts and templates.",
     },
     {
       n: "4",
-      title: "Final Files & Guide",
-      text: "You receive all files plus a short guide showing exactly how to use your brand.",
+      title: "Get Files and Your Guide",
+      text: "You receive all files and a short guide that shows exactly how to use your brand on cards, social posts, email and print.",
     },
   ],
   faqs: [
     {
       q: "Can I make changes to the logo later?",
-      a: "Yes. You get all source files (AI, PNG, JPG) so you or any designer can edit later. We also give 30 days of free small adjustments after handover.",
+      a: "Yes. You receive all source files in AI, PNG and JPG, so you or any designer can edit them later. We also give 30 days of free small changes after handover.",
     },
     {
       q: "What happens if I do not like the designs?",
-      a: "We show multiple directions early and keep refining until you love it. If we cannot get it right our money-back guarantee covers you completely.",
+      a: "We show several directions early and keep refining them with you until you love the result. If we cannot get it right, our money back promise covers you in full.",
     },
     {
       q: "Do you create social media posts too?",
-      a: "Every package includes branded post templates (square, story, landscape) so your social media always looks consistent and professional.",
+      a: "Every package includes branded post templates in square, story and landscape sizes, so your social pages stay consistent and professional.",
     },
     {
       q: "How soon will I receive everything?",
-      a: "Most clients get final files in 2-4 weeks depending on the package and how fast feedback comes back.",
+      a: "Most clients receive final files in 2 to 4 weeks, depending on the package and how quickly feedback comes back.",
     },
   ],
 };
 
 export default function BrandingPage() {
-  return <ServiceDetailTemplate data={data} />;
+  return (
+    <>
+      <ServiceDetailTemplate data={data} />
+      <ServiceJsonLd
+        slug={data.slug}
+        metaTitle={data.metaTitle}
+        metaDescription={data.metaDescription}
+        serviceType={data.serviceType}
+        faqs={data.faqs}
+      />
+    </>
+  );
 }

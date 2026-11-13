@@ -23,8 +23,8 @@ const aboutSchema = {
     {
       "@type": "Organization",
       name: "TechCore Studio",
-      url: "https://techcore.studio",
-      logo: "https://techcore.studio/TechCoreStudio Logo-01.jpg",
+      url: "https://techcorestudio.com",
+      logo: "https://techcorestudio.com/techcore-studio-logo.png",
       description: "Premium UK & USA-based software house delivering enterprise-grade digital solutions.",
       foundingDate: "2014",
       address: [
@@ -46,12 +46,6 @@ const aboutSchema = {
           contactType: "sales",
           areaServed: "GB",
         },
-        {
-          "@type": "ContactPoint",
-          telephone: "+1-212-555-0199",
-          contactType: "sales",
-          areaServed: "US",
-        },
       ],
       sameAs: [
         "https://linkedin.com/company/techcore-studio",
@@ -61,26 +55,21 @@ const aboutSchema = {
     {
       "@type": "WebSite",
       name: "TechCore Studio",
-      url: "https://techcore.studio",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://techcore.studio/search?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
+      url: "https://techcorestudio.com",
     },
     {
       "@type": "AboutPage",
-      "@id": "https://techcore.studio/about",
-      url: "https://techcore.studio/about",
+      "@id": "https://techcorestudio.com/about",
+      url: "https://techcorestudio.com/about",
       name: "About TechCore Studio",
       description: "Learn about TechCore Studio, a premium software house with offices in London and South Carolina. We transform complex challenges into elegant, scalable digital solutions.",
       isPartOf: {
         "@type": "WebSite",
-        "@id": "https://techcore.studio",
+        "@id": "https://techcorestudio.com",
       },
       mainEntity: {
         "@type": "Organization",
-        "@id": "https://techcore.studio",
+        "@id": "https://techcorestudio.com",
       },
     },
   ],

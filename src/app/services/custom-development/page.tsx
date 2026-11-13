@@ -1,18 +1,38 @@
-"use client";
-
+import type { Metadata } from "next";
 import ServiceDetailTemplate, { ServiceDetailData } from "@/components/sections/ServiceDetailTemplate";
+import ServiceJsonLd from "@/components/sections/ServiceJsonLd";
+
+export const metadata: Metadata = {
+  title: "Custom Software Development UK | Bespoke Business Software",
+  description: "Custom software development UK for dashboards, portals and automations. Fixed quotes from $2,999, weekly demos and full code ownership.",
+  alternates: { canonical: "https://techcorestudio.com/services/custom-development" },
+  openGraph: {
+    title: "Custom Software Development UK | Bespoke Business Software",
+    description: "Custom software development UK for dashboards, portals and automations. Fixed quotes from $2,999, weekly demos and full code ownership.",
+    url: "https://techcorestudio.com/services/custom-development",
+    siteName: "TechCore Studio",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Software Development UK | Bespoke Business Software",
+    description: "Custom software development UK for dashboards, portals and automations. Fixed quotes from $2,999, weekly demos and full code ownership.",
+  },
+};
 
 const data: ServiceDetailData = {
   slug: "custom-development",
   badge: "CUSTOM DEVELOPMENT",
-  heroTitle: "Software Built Around",
-  heroHighlight: "Your Business",
+  heroTitle: "Software That Fits the Way",
+  heroHighlight: "You Work",
   heroSub:
-    "Off-the-shelf tools force your team into workarounds, spreadsheets and double data entry. We design and build custom software — web applications, dashboards, portals and automations — that fits your exact process, connects the tools you already use, and gives you back hours every week.",
-  metaTitle: "Custom Software Development for Small Businesses",
+    "Off the shelf tools force your team into workarounds and double entry. We build web apps, dashboards, portals and automations around your exact process, so your team saves hours every week.",
+  metaTitle: "Custom Software Development UK | Bespoke Business Software",
   metaDescription:
-    "Custom software, dashboards, portals and automations built around your process — fixed quotes from $2,999, weekly demos, 100% code ownership.",
+    "Custom software development UK for dashboards, portals and automations. Fixed quotes from $2,999, weekly demos and full code ownership.",
   serviceType: "Custom Development",
+  deliverablesTitle: "Everything Your System Includes",
   packages: [
     {
       name: "Starter System",
@@ -76,64 +96,75 @@ const data: ServiceDetailData = {
     },
   ],
   deliverables: [
-    "Discovery & requirements blueprint",
-    "UX/UI design your team will find easy to use",
-    "Custom web application built to your spec",
-    "Database design & secure data storage",
-    "Admin dashboard & role-based user accounts",
-    "Third-party API integrations",
-    "Automated workflows & email notifications",
-    "Testing, QA & deployment on cloud hosting",
-    "Staff training & plain-English documentation",
-    "Full source code & 100% ownership",
-    "30 days post-launch bug fixes & support",
+    "A clear discovery and requirements blueprint",
+    "Design your team will find easy to use",
+    "A custom web app built to your exact spec",
+    "Database design with secure data storage",
+    "Admin dashboard with role based user accounts",
+    "Connections to the third party tools you already use",
+    "Automated workflows and email alerts",
+    "Testing and deployment on cloud hosting",
+    "Staff training with plain English guides",
+    "Full source code and complete ownership",
+    "30 days of bug fixes and support after launch",
   ],
   steps: [
     {
       n: "1",
-      title: "Discovery & Blueprint",
-      text: "We map your process, your pain points and your tools, then spec exactly what gets built — with a fixed quote before any code.",
+      title: "Map Your Process",
+      text: "We map how your team works today, where time is lost and which tools must connect, then give you a fixed quote before any code is written.",
     },
     {
       n: "2",
-      title: "Design & Prototype",
-      text: "You see and click through the screens before we build them, so there are no surprises about how the software will work.",
+      title: "Click Through the Design",
+      text: "You see and click through every screen before we build, so you know exactly how the software will work.",
     },
     {
       n: "3",
-      title: "Build & Weekly Demos",
-      text: "We build in weekly stages and demo real, working software every week. Your feedback shapes each next step.",
+      title: "Build in Weekly Steps",
+      text: "We build in weekly stages and show you working software every week. Your feedback shapes what comes next.",
     },
     {
       n: "4",
-      title: "Launch, Training & Support",
-      text: "We deploy, move your data, train your team and stay on hand after launch while everyone settles in.",
+      title: "Launch and Train Your Team",
+      text: "We deploy the system, move your data across, train your team and stay on hand while everyone settles in.",
     },
   ],
   faqs: [
     {
       q: "How much does custom software cost?",
-      a: "It depends on four things: how many features and screens you need, how complex the rules behind them are, how many other systems it must connect to, and how many types of users (staff, customers, admins) it serves. A focused internal tool starts at $2,999; connected business platforms are typically $5,999; full SaaS platforms start at $9,999. Every project gets a fixed quote after a free discovery session — the price we agree is the price you pay.",
+      a: "It depends on the features, the rules behind them, the systems it must connect to and the types of users it serves. A focused internal tool starts at $2,999, a connected business platform is typically $5,999 and a full SaaS platform starts at $9,999. You get a fixed quote after a free discovery session, and the price we agree is the price you pay.",
     },
     {
       q: "How long does it take to build?",
-      a: "A working first version usually takes 4–10 weeks. Starter systems typically launch in 6–8 weeks, business platforms in 8–12, and larger SaaS platforms in 12–16. We build in stages with a live demo every week, so you are using real software early instead of waiting months for one big reveal.",
+      a: "A working first version usually takes 4 to 10 weeks. Starter systems typically launch in 6 to 8 weeks, business platforms in 8 to 12 weeks and larger SaaS platforms in 12 to 16 weeks. You see a live demo every week, so you use real software early.",
     },
     {
       q: "Do I own the software and the code?",
-      a: "Yes — 100%. The source code, the data and the system are yours, delivered in full at launch. There is no lock-in and no per-seat licence fee for your own software: you can host it where you like and hire any developer to extend it in future.",
+      a: "Yes, completely. The source code, the data and the system are yours, delivered in full at launch. There is no lock in and no per seat licence fee. You can host it where you like and hire any developer to extend it.",
     },
     {
       q: "What happens after launch? Who maintains it?",
-      a: "Every package includes a post-launch support window (30–90 days) for bug fixes. After that, most clients take an optional care plan covering hosting checks, security updates, small improvements and priority support — or hand the code to their own developer. Because you own everything, that choice is entirely yours.",
+      a: "Every package includes a support window of 30 to 90 days for bug fixes. After that most clients take an optional care plan for hosting checks, security updates, small improvements and priority support, or hand the code to their own developer. The choice is yours because you own everything.",
     },
     {
       q: "Should I buy off-the-shelf software instead?",
-      a: "Sometimes, honestly, yes — if a proven tool already does exactly what you need, buy it. Custom software wins when your process is your advantage: when your team wastes hours on workarounds, double entry or tools that almost fit, or when you are paying per-seat fees for five products that still do not talk to each other. The free consultation exists to give you an honest answer either way.",
+      a: "Sometimes, yes. If a proven tool already does exactly what you need, buy it. Custom software wins when your process is your advantage: when your team wastes hours on workarounds and double entry, or when you pay per seat fees for five products that still do not talk to each other. The free consultation gives you an honest answer either way.",
     },
   ],
 };
 
 export default function CustomDevelopmentPage() {
-  return <ServiceDetailTemplate data={data} />;
+  return (
+    <>
+      <ServiceDetailTemplate data={data} />
+      <ServiceJsonLd
+        slug={data.slug}
+        metaTitle={data.metaTitle}
+        metaDescription={data.metaDescription}
+        serviceType={data.serviceType}
+        faqs={data.faqs}
+      />
+    </>
+  );
 }

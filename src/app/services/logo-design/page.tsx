@@ -1,18 +1,38 @@
-"use client";
-
+import type { Metadata } from "next";
 import ServiceDetailTemplate, { ServiceDetailData } from "@/components/sections/ServiceDetailTemplate";
+import ServiceJsonLd from "@/components/sections/ServiceJsonLd";
+
+export const metadata: Metadata = {
+  title: "Logo Design Services UK for Small Businesses",
+  description: "Logo design services UK for small businesses and startups. Custom logos, full brand files and full ownership. Packages from $125.",
+  alternates: { canonical: "https://techcorestudio.com/services/logo-design" },
+  openGraph: {
+    title: "Logo Design Services UK for Small Businesses",
+    description: "Logo design services UK for small businesses and startups. Custom logos, full brand files and full ownership. Packages from $125.",
+    url: "https://techcorestudio.com/services/logo-design",
+    siteName: "TechCore Studio",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Logo Design Services UK for Small Businesses",
+    description: "Logo design services UK for small businesses and startups. Custom logos, full brand files and full ownership. Packages from $125.",
+  },
+};
 
 const data: ServiceDetailData = {
   slug: "logo-design",
   badge: "LOGO DESIGN",
-  heroTitle: "Logos That Make Your Business",
-  heroHighlight: "Memorable",
+  heroTitle: "A Logo That Helps Customers",
+  heroHighlight: "Remember You",
   heroSub:
-    "We create professional, timeless logo designs and complete brand identities for small businesses, startups, and local brands. From logo to color palette, typography, and brand guidelines - everything you need to stand out and build trust.",
-  metaTitle: "Logo Design Services for Small Businesses",
+    "We design clear, professional logos for small businesses, startups and local brands in the UK and the USA. You get a logo that works on your website, your shop front, your van and your social profiles, plus the colours, fonts and files to use it with confidence.",
+  metaTitle: "Logo Design Services UK for Small Businesses",
   metaDescription:
-    "Professional logo design and brand identity packages for small businesses and startups. Fast turnaround, unlimited revisions, full ownership. Packages start from $125. Get your custom logo today.",
+    "Logo design services UK for small businesses and startups. Custom logos, full brand files and full ownership. Packages from $125.",
   serviceType: "Logo Design & Brand Identity",
+  deliverablesTitle: "Everything Your Logo Needs to Work Hard",
   packages: [
     {
       name: "Basic",
@@ -139,57 +159,68 @@ const data: ServiceDetailData = {
     },
   ],
   deliverables: [
-    "Multiple logo variations (primary, secondary, monochrome)",
-    "Full color palette (primary, secondary, accents)",
-    "Typography selection and pairing",
-    "Brand guidelines PDF (logo usage, do’s and don’ts)",
-    "Social media profile icons and covers",
-    "Business card and stationery mockups",
-    "Source files (AI, EPS, PNG, SVG, JPG)",
-    "Unlimited revisions during active month (Premium)",
+    "Main, secondary and single colour versions of your logo",
+    "A full colour palette with main colours, supporting colours and accents",
+    "Font choices that pair well and stay easy to read",
+    "A brand guide PDF that shows how to use your logo and what to avoid",
+    "Social profile pictures and cover images sized and ready to use",
+    "Business card and stationery mockups so you can see the brand in use",
+    "Source files in AI, EPS, PNG, SVG and JPG",
+    "Unlimited revisions while your design is in progress",
   ],
   steps: [
     {
       n: "1",
-      title: "Brief & Discovery",
-      text: "You share your business story, values, target audience and preferences.",
+      title: "Tell Us About Your Business",
+      text: "Share your story, your values, your customers and the look you like. Tell us what must come across in the first glance.",
     },
     {
       n: "2",
-      title: "Concepts & Moodboard",
-      text: "We present 3-5 unique logo concepts + moodboard.",
+      title: "See Your First Concepts",
+      text: "We show you three to five distinct logo ideas with a mood board, so you can compare directions before we go further.",
     },
     {
       n: "3",
-      title: "Revisions & Refinement",
-      text: "We refine based on your feedback until perfect.",
+      title: "Refine Until It Feels Right",
+      text: "We adjust the chosen idea with your feedback, shaping the mark, colours and type until it feels like your business.",
     },
     {
       n: "4",
-      title: "Delivery & Guidelines",
-      text: "You receive all files + full brand guidelines PDF.",
+      title: "Get Every File and Guide",
+      text: "You receive all final files and a brand guide PDF that shows exactly how to use your logo everywhere.",
     },
   ],
   faqs: [
     {
       q: "How many logo concepts do I get?",
-      a: "Basic: 4 concepts, Startup: 6 concepts, Professional: 8 concepts, Elite/Business/Gold: unlimited concepts.",
+      a: "Basic gives you 4 concepts, Startup gives you 6, Professional gives you 8, and Elite, Business and Gold give you unlimited concepts.",
     },
     {
       q: "Do I own the final logo and files?",
-      a: "Yes - 100% ownership and all source files delivered upon completion.",
+      a: "Yes. You own the logo in full and you receive all source files when the work is done.",
     },
     {
       q: "Can I use the logo commercially?",
-      a: "Yes - full commercial rights are transferred to you.",
+      a: "Yes. Full commercial rights pass to you, so you can use the logo on products, signs, vehicles and advertising.",
     },
     {
       q: "What if I do not like any concepts?",
-      a: "We offer unlimited revisions until you are happy (included in all packages).",
+      a: "Every package includes unlimited revisions, so we keep working on the ideas until you are happy with one.",
     },
   ],
 };
 
 export default function LogoDesignPage() {
-  return <ServiceDetailTemplate data={data} />;
+  return (
+    <>
+      <ServiceDetailTemplate data={data} />
+      <ServiceJsonLd
+        slug={data.slug}
+        metaTitle={data.metaTitle}
+        metaDescription={data.metaDescription}
+        serviceType={data.serviceType}
+        faqs={data.faqs}
+      />
+    </>
+  );
 }

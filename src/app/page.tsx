@@ -19,7 +19,7 @@ const homeSchema = {
       "@type": "Organization",
       name: "TechCore Studio",
       url: "https://techcorestudio.com",
-      logo: "https://techcorestudio.com/TechCoreStudio Logo-01.jpg",
+      logo: "https://techcorestudio.com/techcore-studio-logo.png",
       description:
         "Premium UK & USA-based software house delivering enterprise-grade digital solutions.",
       foundingDate: "2014",
@@ -39,16 +39,9 @@ const homeSchema = {
           areaServed: "GB",
           availableLanguage: ["English"],
         },
-        {
-          "@type": "ContactPoint",
-          telephone: "+1-212-555-0199",
-          contactType: "sales",
-          areaServed: "US",
-          availableLanguage: ["English"],
-        },
       ],
       sameAs: [
-        "https://www.linkedin.com/company/techcorestudio/ ",
+        "https://www.linkedin.com/company/techcorestudio/",
         "https://twitter.com/techcorestudio",
       ],
     },
@@ -56,11 +49,6 @@ const homeSchema = {
       "@type": "WebSite",
       name: "TechCore Studio",
       url: "https://techcorestudio.com",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://techcorestudio.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
     },
     {
       "@type": "WebPage",

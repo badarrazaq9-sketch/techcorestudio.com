@@ -76,7 +76,7 @@ const contactSchema = {
   mainEntity: {
     "@type": "Organization",
     name: "TechCore Studio",
-    telephone: ["+44-20-7946-0958", "+1-212-555-0199"],
+    telephone: "+44-20-7946-0958",
     email: "davidanderson@techcorestudio.com",
     address: [
       {

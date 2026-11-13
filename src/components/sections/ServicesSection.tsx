@@ -13,11 +13,11 @@ const servicesSchemaData = [
     name: "Web Development",
     description:
       "Enterprise-grade web applications built with Next.js, React, and modern architectures. Scalable, fast, and SEO-optimized for global reach.",
-    url: "https://techcore.studio/services/web-development",
+    url: "https://techcorestudio.com/services/web-development",
     provider: {
       "@type": "Organization",
       name: "TechCore Studio",
-      url: "https://techcore.studio",
+      url: "https://techcorestudio.com",
     },
     areaServed: [
       { "@type": "Country", name: "United Kingdom" },
@@ -38,11 +38,11 @@ const servicesSchemaData = [
     name: "UI/UX Design",
     description:
       "User-centered design systems that blend aesthetics with functionality. From wireframes to polished, accessible interfaces.",
-    url: "https://techcore.studio/services/ui-ux-design",
+    url: "https://techcorestudio.com/services/ui-ux-design",
     provider: {
       "@type": "Organization",
       name: "TechCore Studio",
-      url: "https://techcore.studio",
+      url: "https://techcorestudio.com",
     },
     areaServed: [
       { "@type": "Country", name: "United Kingdom" },
@@ -56,11 +56,11 @@ const servicesSchemaData = [
     name: "Performance Optimization",
     description:
       "Lightning-fast load times and optimized Core Web Vitals. We make every millisecond count for your global user base.",
-    url: "https://techcore.studio/services/performance",
+    url: "https://techcorestudio.com/services/performance",
     provider: {
       "@type": "Organization",
       name: "TechCore Studio",
-      url: "https://techcore.studio",
+      url: "https://techcorestudio.com",
     },
     areaServed: [
       { "@type": "Country", name: "United Kingdom" },
@@ -74,11 +74,11 @@ const servicesSchemaData = [
     name: "Digital Strategy",
     description:
       "Data-driven growth strategies for UK & USA markets. SEO, content architecture, and conversion optimization.",
-    url: "https://techcore.studio/services/digital-strategy",
+    url: "https://techcorestudio.com/services/digital-strategy",
     provider: {
       "@type": "Organization",
       name: "TechCore Studio",
-      url: "https://techcore.studio",
+      url: "https://techcorestudio.com",
     },
     areaServed: [
       { "@type": "Country", name: "United Kingdom" },
@@ -92,11 +92,11 @@ const servicesSchemaData = [
     name: "AI Integration",
     description:
       "Smart automation and AI-powered features. From intelligent chatbots to predictive analytics and ML APIs.",
-    url: "https://techcore.studio/services/ai-integration",
+    url: "https://techcorestudio.com/services/ai-integration",
     provider: {
       "@type": "Organization",
       name: "TechCore Studio",
-      url: "https://techcore.studio",
+      url: "https://techcorestudio.com",
     },
     areaServed: [
       { "@type": "Country", name: "United Kingdom" },
@@ -110,11 +110,11 @@ const servicesSchemaData = [
     name: "Security & Compliance",
     description:
       "Enterprise-grade security implementations. Authentication, encryption, and GDPR/SOC2 compliance-ready architectures.",
-    url: "https://techcore.studio/services/security",
+    url: "https://techcorestudio.com/services/security",
     provider: {
       "@type": "Organization",
       name: "TechCore Studio",
-      url: "https://techcore.studio",
+      url: "https://techcorestudio.com",
     },
     areaServed: [
       { "@type": "Country", name: "United Kingdom" },
@@ -133,13 +133,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://techcore.studio",
+      item: "https://techcorestudio.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://techcore.studio/#services",
+      item: "https://techcorestudio.com/#services",
     },
   ],
 };

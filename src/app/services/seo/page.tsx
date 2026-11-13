@@ -1,18 +1,38 @@
-"use client";
-
+import type { Metadata } from "next";
 import ServiceDetailTemplate, { ServiceDetailData } from "@/components/sections/ServiceDetailTemplate";
+import ServiceJsonLd from "@/components/sections/ServiceJsonLd";
+
+export const metadata: Metadata = {
+  title: "Local SEO Services UK | Rank Higher on Google Maps",
+  description: "Local SEO services UK for small businesses. Google Business Profile, citations, reviews and on page fixes that bring more calls from Google.",
+  alternates: { canonical: "https://techcorestudio.com/services/seo" },
+  openGraph: {
+    title: "Local SEO Services UK | Rank Higher on Google Maps",
+    description: "Local SEO services UK for small businesses. Google Business Profile, citations, reviews and on page fixes that bring more calls from Google.",
+    url: "https://techcorestudio.com/services/seo",
+    siteName: "TechCore Studio",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Local SEO Services UK | Rank Higher on Google Maps",
+    description: "Local SEO services UK for small businesses. Google Business Profile, citations, reviews and on page fixes that bring more calls from Google.",
+  },
+};
 
 const data: ServiceDetailData = {
   slug: "seo",
   badge: "SEO SERVICES",
-  heroTitle: "More Calls & Customers from",
-  heroHighlight: "Google",
+  heroTitle: "More Calls from Google",
+  heroHighlight: "Every Week",
   heroSub:
-    "We help local businesses rank higher on Google so people find you first when they need your service. More visibility means more phone calls, bookings and jobs without depending only on paid ads.",
-  metaTitle: "Local SEO Services for Small Businesses",
+    "We help local businesses rank higher on Google, so people find you first when they need your service. More visibility means more calls, bookings and jobs, without relying only on paid ads.",
+  metaTitle: "Local SEO Services UK | Rank Higher on Google Maps",
   metaDescription:
-    "Rank higher on Google and attract more local customers. Google Business optimization, citations, reviews & keyword strategy. Visible results in weeks.",
+    "Local SEO services UK for small businesses. Google Business Profile, citations, reviews and on page fixes that bring more calls from Google.",
   serviceType: "SEO Services",
+  deliverablesTitle: "What Your Local SEO Includes",
   packages: [
     {
       name: "Local Starter SEO",
@@ -76,56 +96,67 @@ const data: ServiceDetailData = {
     },
   ],
   deliverables: [
-    "Google Business Profile full optimization",
-    "Local citation building & cleanup",
-    "Keyword research for your area",
-    "On-page SEO fixes on your website",
-    "Review generation system setup",
-    "Monthly ranking & traffic report",
-    "30 days post-setup support",
+    "Full optimisation of your Google Business Profile",
+    "Local citations built and cleaned up across directories",
+    "Keyword research for your area and your services",
+    "On page SEO fixes across your website",
+    "A review system that brings in more happy customers",
+    "A monthly report on rankings, calls and traffic",
+    "30 days of support after setup",
   ],
   steps: [
     {
       n: "1",
-      title: "Kickoff & Audit",
-      text: "We review your current Google presence, website and competitors.",
+      title: "Audit Your Presence",
+      text: "We check your Google listing, your website and your rivals, then show you where you stand and what to fix first.",
     },
     {
       n: "2",
-      title: "Optimization Phase",
-      text: "We fix your Google Business, citations, on-page elements and start review strategy.",
+      title: "Fix the Foundations",
+      text: "We optimise your Google Business Profile, clean up your citations, fix on page issues and set up your review plan.",
     },
     {
       n: "3",
-      title: "Ranking Push",
-      text: "We build authority and monitor rankings while tweaking for best results.",
+      title: "Push Your Rankings",
+      text: "We build local authority and watch your rankings week by week, tuning the work for the best results.",
     },
     {
       n: "4",
-      title: "Report & Maintain",
-      text: "You get clear monthly updates and we keep improving your position.",
+      title: "Report and Improve",
+      text: "You get a clear monthly update, and we keep working to hold and improve your position.",
     },
   ],
   faqs: [
     {
       q: "How long until I see more calls?",
-      a: "Most clients notice more Google views and calls within 4–8 weeks. Big jumps usually happen in months 3–6.",
+      a: "Most clients notice more Google views and calls within 4 to 8 weeks. Bigger jumps usually happen in months 3 to 6.",
     },
     {
       q: "Do you guarantee first position?",
-      a: "No one can guarantee #1. We focus on getting you into the top 10 local pack and map consistently.",
+      a: "No one can honestly guarantee number one. We focus on getting you into the local pack and the top results for your area, and keeping you there.",
     },
     {
       q: "What if my Google Business is suspended?",
-      a: "We help recover or rebuild it properly so it stays live and ranks well.",
+      a: "We help you recover it or rebuild it the right way, so it stays live and ranks well.",
     },
     {
       q: "Do I need a new website?",
-      a: "Not always. We can optimize your current site. A fast, mobile-friendly site helps rankings a lot.",
+      a: "Not always. We can optimise your current site. A fast site that works well on phones helps your rankings a lot.",
     },
   ],
 };
 
 export default function SeoPage() {
-  return <ServiceDetailTemplate data={data} />;
+  return (
+    <>
+      <ServiceDetailTemplate data={data} />
+      <ServiceJsonLd
+        slug={data.slug}
+        metaTitle={data.metaTitle}
+        metaDescription={data.metaDescription}
+        serviceType={data.serviceType}
+        faqs={data.faqs}
+      />
+    </>
+  );
 }

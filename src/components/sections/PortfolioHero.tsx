@@ -23,8 +23,8 @@ const portfolioSchema = {
     {
       "@type": "Organization",
       name: "TechCore Studio",
-      url: "https://techcore.studio",
-      logo: "https://techcore.studio/TechCoreStudio Logo-01.jpg",
+      url: "https://techcorestudio.com",
+      logo: "https://techcorestudio.com/techcore-studio-logo.png",
       description: "Premium UK & USA-based software house delivering enterprise-grade digital solutions.",
       foundingDate: "2014",
       address: [
@@ -33,7 +33,6 @@ const portfolioSchema = {
       ],
       contactPoint: [
         { "@type": "ContactPoint", telephone: "+44-20-7946-0958", contactType: "sales", areaServed: "GB", availableLanguage: ["English"] },
-        { "@type": "ContactPoint", telephone: "+1-212-555-0199", contactType: "sales", areaServed: "US", availableLanguage: ["English"] },
       ],
       sameAs: [
         "https://linkedin.com/company/techcore-studio",
@@ -43,21 +42,16 @@ const portfolioSchema = {
     {
       "@type": "WebSite",
       name: "TechCore Studio",
-      url: "https://techcore.studio",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://techcore.studio/search?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
+      url: "https://techcorestudio.com",
     },
     {
       "@type": "CollectionPage",
-      "@id": "https://techcore.studio/portfolio",
-      url: "https://techcore.studio/portfolio",
+      "@id": "https://techcorestudio.com/portfolio",
+      url: "https://techcorestudio.com/portfolio",
       name: "TechCore Studio Portfolio",
       description: "Explore our latest projects across web development, mobile apps, UI/UX design, branding, and AI-powered solutions.",
-      isPartOf: { "@type": "WebSite", "@id": "https://techcore.studio" },
-      mainEntity: { "@type": "Organization", "@id": "https://techcore.studio" },
+      isPartOf: { "@type": "WebSite", "@id": "https://techcorestudio.com" },
+      mainEntity: { "@type": "Organization", "@id": "https://techcorestudio.com" },
     },
   ],
 };

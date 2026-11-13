@@ -1,18 +1,38 @@
-"use client";
-
+import type { Metadata } from "next";
 import ServiceDetailTemplate, { ServiceDetailData } from "@/components/sections/ServiceDetailTemplate";
+import ServiceJsonLd from "@/components/sections/ServiceJsonLd";
+
+export const metadata: Metadata = {
+  title: "Lead Generation Services UK | Qualified Leads Monthly",
+  description: "Lead generation services UK using Meta and Google Ads. Qualified leads sent direct to your phone and inbox, with no long contract.",
+  alternates: { canonical: "https://techcorestudio.com/services/lead-generation" },
+  openGraph: {
+    title: "Lead Generation Services UK | Qualified Leads Monthly",
+    description: "Lead generation services UK using Meta and Google Ads. Qualified leads sent direct to your phone and inbox, with no long contract.",
+    url: "https://techcorestudio.com/services/lead-generation",
+    siteName: "TechCore Studio",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lead Generation Services UK | Qualified Leads Monthly",
+    description: "Lead generation services UK using Meta and Google Ads. Qualified leads sent direct to your phone and inbox, with no long contract.",
+  },
+};
 
 const data: ServiceDetailData = {
   slug: "lead-generation",
   badge: "LEAD GENERATION",
-  heroTitle: "Predictable New Customers",
-  heroHighlight: "Every Month",
+  heroTitle: "New Customers Every Month",
+  heroHighlight: "Without the Guesswork",
   heroSub:
-    "We bring ready-to-buy customers to your business using Meta ads, Google ads and organic methods. No guesswork. Just qualified leads that turn into paying jobs.",
-  metaTitle: "Lead Generation Services for Small Businesses",
+    "We bring ready to buy customers to your business with Meta ads, Google ads and organic methods. Every lead is checked, tracked and sent straight to you.",
+  metaTitle: "Lead Generation Services UK | Qualified Leads Monthly",
   metaDescription:
-    "Targeted campaigns that deliver qualified leads ready to buy. High-quality traffic, conversion-focused strategies for B2B companies and service providers.",
+    "Lead generation services UK using Meta and Google Ads. Qualified leads sent direct to your phone and inbox, with no long contract.",
   serviceType: "Lead Generation",
+  deliverablesTitle: "What Your Lead Campaign Includes",
   packages: [
     {
       name: "Starter Lead Package",
@@ -79,57 +99,68 @@ const data: ServiceDetailData = {
     },
   ],
   deliverables: [
-    "Custom ad strategy for your area and service",
-    "Professional ad creatives (images + short videos)",
-    "Landing page or form setup for best conversions",
-    "Google Ads or Meta Ads campaign setup",
-    "Lead tracking and reporting dashboard",
-    "Weekly performance updates and tweaks",
-    "Call and form lead delivery straight to you",
-    "30 days of optimization after launch",
+    "An ad strategy built for your area and your service",
+    "Professional ad images and short videos",
+    "A landing page or form built to convert visitors",
+    "Google Ads or Meta Ads campaigns set up and managed",
+    "Lead tracking and a simple reporting dashboard",
+    "Weekly updates with tweaks to improve results",
+    "Calls and form leads sent straight to you",
+    "30 days of optimisation after launch",
   ],
   steps: [
     {
       n: "1",
-      title: "Strategy Call",
-      text: "We learn your service area, ideal customer and past results to build the right plan.",
+      title: "Plan the Campaign",
+      text: "We learn your service area, your ideal customer and what has worked before, then build the right plan.",
     },
     {
       n: "2",
-      title: "Creative & Setup",
-      text: "We create ads and landing pages that speak directly to people needing your service.",
+      title: "Build Ads and Pages",
+      text: "We write and design ads and landing pages that speak to people who need your service right now.",
     },
     {
       n: "3",
-      title: "Launch & Testing",
-      text: "We start campaigns small, test what works best and quickly improve results.",
+      title: "Launch and Test",
+      text: "We start small, test what works best and fix what does not, before spending more.",
     },
     {
       n: "4",
-      title: "Scale & Optimize",
-      text: "We increase spend on winning ads and keep adjusting for more and better leads.",
+      title: "Scale What Works",
+      text: "We put more budget behind the winning ads and keep tuning the campaign for more and better leads.",
     },
   ],
   faqs: [
     {
       q: "Do I pay for the ads separately?",
-      a: "Yes. You pay the ad platforms (Meta/Google) directly for clicks. Our fee covers strategy, creatives, management and optimization.",
+      a: "Yes. You pay Meta or Google direct for clicks. Our fee covers strategy, creatives, management and optimisation.",
     },
     {
       q: "What if I get no leads?",
-      a: "We offer a money-back guarantee. If we deliver zero qualified leads in the first 30 days you get a full refund.",
+      a: "We offer a money-back guarantee. If we deliver zero qualified leads in the first 30 days, you get a full refund.",
     },
     {
       q: "Can I pause or stop anytime?",
-      a: "Yes. No long contracts. You can pause or cancel with 7 days notice. Campaigns remain yours.",
+      a: "Yes. There are no long contracts. You can pause or cancel with 7 days notice, and the campaigns stay yours.",
     },
     {
       q: "How soon do leads start coming?",
-      a: "Most clients see first leads within 7-14 days after launch. Full momentum builds in 30 days.",
+      a: "Most clients see their first leads within 7 to 14 days of launch. Full momentum usually builds within 30 days.",
     },
   ],
 };
 
 export default function LeadGenerationPage() {
-  return <ServiceDetailTemplate data={data} />;
+  return (
+    <>
+      <ServiceDetailTemplate data={data} />
+      <ServiceJsonLd
+        slug={data.slug}
+        metaTitle={data.metaTitle}
+        metaDescription={data.metaDescription}
+        serviceType={data.serviceType}
+        faqs={data.faqs}
+      />
+    </>
+  );
 }

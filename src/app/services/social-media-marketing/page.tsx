@@ -1,18 +1,38 @@
-"use client";
-
+import type { Metadata } from "next";
 import ServiceDetailTemplate, { ServiceDetailData } from "@/components/sections/ServiceDetailTemplate";
+import ServiceJsonLd from "@/components/sections/ServiceJsonLd";
+
+export const metadata: Metadata = {
+  title: "Social Media Marketing UK | Facebook and Instagram Ads",
+  description: "Social media marketing UK for small businesses. Content, Facebook and Instagram ads and page management that turn followers into calls and bookings.",
+  alternates: { canonical: "https://techcorestudio.com/services/social-media-marketing" },
+  openGraph: {
+    title: "Social Media Marketing UK | Facebook and Instagram Ads",
+    description: "Social media marketing UK for small businesses. Content, Facebook and Instagram ads and page management that turn followers into calls and bookings.",
+    url: "https://techcorestudio.com/services/social-media-marketing",
+    siteName: "TechCore Studio",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Social Media Marketing UK | Facebook and Instagram Ads",
+    description: "Social media marketing UK for small businesses. Content, Facebook and Instagram ads and page management that turn followers into calls and bookings.",
+  },
+};
 
 const data: ServiceDetailData = {
   slug: "social-media-marketing",
   badge: "SOCIAL MEDIA MARKETING",
-  heroTitle: "Turn Followers Into",
-  heroHighlight: "Real Customers",
+  heroTitle: "Turn Your Followers into",
+  heroHighlight: "Paying Customers",
   heroSub:
-    "We create engaging social media content and run targeted ads on Facebook & Instagram so local customers see you, trust you and call/book you directly. Stop posting randomly – start getting real results.",
-  metaTitle: "Social Media Marketing for Small Businesses",
+    "We plan and post content and run targeted ads on Facebook and Instagram, so local customers see you, trust you and get in touch. No random posting. Just steady enquiries.",
+  metaTitle: "Social Media Marketing UK | Facebook and Instagram Ads",
   metaDescription:
-    "Grow your Instagram, Facebook & TikTok presence. Content creation, targeted ads, engagement & lead generation tailored for startups and local brands.",
+    "Social media marketing UK for small businesses. Content, Facebook and Instagram ads and page management that turn followers into calls and bookings.",
   serviceType: "Social Media Marketing",
+  deliverablesTitle: "What Your Monthly Plan Includes",
   packages: [
     {
       name: "Startup SMM",
@@ -94,56 +114,67 @@ const data: ServiceDetailData = {
     },
   ],
   deliverables: [
-    "Custom content calendar (monthly)",
-    "Professional graphics & short videos",
-    "Facebook & Instagram profile optimization",
-    "Targeted ad campaign setup (optional spend)",
-    "Engagement & reply management guidance",
-    "Monthly performance report (reach, leads)",
-    "30 days post-launch support",
+    "A monthly content calendar planned around your customers",
+    "Professional graphics and short videos made for you",
+    "Facebook and Instagram profiles set up and polished",
+    "Targeted ad campaigns set up for you, with ad spend paid by you",
+    "Help with replies and engagement so no message is missed",
+    "A monthly report on reach, messages and leads",
+    "30 days of support after launch",
   ],
   steps: [
     {
       n: "1",
-      title: "Strategy & Profile Audit",
-      text: "We review your current pages and plan content that matches your customers.",
+      title: "Audit and Plan",
+      text: "We review your pages, look at what your rivals post and plan content your customers will actually care about.",
     },
     {
       n: "2",
-      title: "Content Creation",
-      text: "We design eye-catching posts, reels and stories for the whole month.",
+      title: "Create the Content",
+      text: "We design posts, reels and stories for the whole month, in your voice and on brand.",
     },
     {
       n: "3",
-      title: "Posting & Engagement",
-      text: "We schedule posts and guide you on replies to build real connections.",
+      title: "Post and Engage",
+      text: "We schedule every post and help you reply to comments and messages, so followers become real contacts.",
     },
     {
       n: "4",
-      title: "Ads & Report",
-      text: "We launch small ads if needed and show you exactly what is working.",
+      title: "Run Ads and Report",
+      text: "We launch small ad campaigns where they will help, then show you what brought in calls and messages.",
     },
   ],
   faqs: [
     {
       q: "Do I have to post myself?",
-      a: "No. We create and schedule everything. You just review and approve the content each month.",
+      a: "No. We create and schedule everything for you. You simply review and approve the content each month.",
     },
     {
       q: "What if I get no engagement?",
-      a: "We guarantee improvement in reach and messages. If not satisfied after first month we refund.",
+      a: "We work to improve your reach and messages from the first month. If you are not happy after the first month, we refund you.",
     },
     {
       q: "Do I pay for ads separately?",
-      a: "Yes. Ad spend is paid directly to Facebook/Instagram. Our fee is only for management and content.",
+      a: "Yes. Ad spend is paid direct to Facebook or Instagram. Our fee covers management and content only.",
     },
     {
       q: "How soon will I see more messages?",
-      a: "Most clients see more profile visits and DMs within 2–4 weeks. Strong growth builds in month 2–3.",
+      a: "Most clients see more profile visits and messages within 2 to 4 weeks. Stronger growth usually builds in month 2 and 3.",
     },
   ],
 };
 
 export default function SocialMediaMarketingPage() {
-  return <ServiceDetailTemplate data={data} />;
+  return (
+    <>
+      <ServiceDetailTemplate data={data} />
+      <ServiceJsonLd
+        slug={data.slug}
+        metaTitle={data.metaTitle}
+        metaDescription={data.metaDescription}
+        serviceType={data.serviceType}
+        faqs={data.faqs}
+      />
+    </>
+  );
 }

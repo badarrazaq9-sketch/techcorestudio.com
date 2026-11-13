@@ -56,7 +56,7 @@ const contactSchema = {
       url: "https://techcorestudio.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://techcorestudio.com/logo.png",
+        url: "https://techcorestudio.com/techcore-studio-logo.png",
         width: 512,
         height: 512
       },

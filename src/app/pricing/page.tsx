@@ -1,9 +1,7 @@
-"use client";
-
 import React from "react";
-import Head from "next/head";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import MotionDiv from "@/components/ui/MotionDiv";
 import { CheckCircle2, BookOpen, PenLine, Megaphone, PenTool, Box, Fingerprint, ShoppingCart, Smartphone, Wrench, Target, Search, Clapperboard } from "lucide-react";
 import AnimatedBackground from "@/components/background/AnimatedBackground";
 import Navbar from "@/components/layout/Navbar";
@@ -1338,37 +1336,49 @@ const pricingSchema = {
   ]
 };
 
+export const metadata: Metadata = {
+  title: "Pricing",
+  description: "Transparent pricing for eBook services, book writing, and book marketing at TechCore Studio. Publishing packages from $499.",
+  alternates: { canonical: "https://techcorestudio.com/pricing" },
+  openGraph: {
+    title: "Pricing | TechCore Studio",
+    description: "Transparent pricing for eBook services, book writing, and book marketing at TechCore Studio. Publishing packages from $499.",
+    url: "https://techcorestudio.com/pricing",
+    siteName: "TechCore Studio",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing | TechCore Studio",
+    description: "Transparent pricing for eBook services, book writing, and book marketing at TechCore Studio. Publishing packages from $499.",
+  },
+};
+
 export default function PricingPage() {
   return (
     <div className="min-h-screen text-white selection:bg-[#5d67f2]/30 bg-[#08080e]">
-      <Head>
-        <title>Pricing | TechCore Studio</title>
-        <meta
-          name="description"
-          content="Transparent pricing for eBook services, book writing, and book marketing at TechCore Studio. Publishing packages from $499."
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(pricingSchema).replace(/</g, "\\u003c"),
-          }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pricingSchema).replace(/</g, '\\u003c'),
+        }}
+      />
 
       <AnimatedBackground />
       <Navbar />
 
       <section className="relative pt-40 pb-16 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <MotionDiv initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="text-[#7b85ff] font-semibold uppercase tracking-[0.2em] text-xs block mb-4">Pricing</span>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-              Clear Prices, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5d67f2] to-[#8b5cf6]">No Surprises</span>
+              Pricing With <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5d67f2] to-[#8b5cf6]">No Surprises</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Transparent packages for design, development, marketing, and publishing — pick the one that fits your project.
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
@@ -1385,7 +1395,7 @@ export default function PricingPage() {
 
             <div className={`grid grid-cols-1 gap-8 items-start ${cat.plans.length === 1 ? "md:grid-cols-1 max-w-xl" : cat.plans.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2 lg:grid-cols-4"}`}>
               {cat.plans.map((plan, i) => (
-                <motion.div
+                <MotionDiv
                   key={plan.name}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -1415,7 +1425,7 @@ export default function PricingPage() {
                   <Link href="/contact" className={`w-full py-4 rounded-xl font-bold text-center transition-all ${plan.popular ? "bg-white text-black hover:bg-gray-200" : "bg-white/10 hover:bg-white/15"}`}>
                     Get Started
                   </Link>
-                </motion.div>
+                </MotionDiv>
               ))}
             </div>
           </div>

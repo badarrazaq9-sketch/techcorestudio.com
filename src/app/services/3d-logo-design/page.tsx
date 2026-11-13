@@ -1,18 +1,38 @@
-"use client";
-
+import type { Metadata } from "next";
 import ServiceDetailTemplate, { ServiceDetailData } from "@/components/sections/ServiceDetailTemplate";
+import ServiceJsonLd from "@/components/sections/ServiceJsonLd";
+
+export const metadata: Metadata = {
+  title: "3D Logo Design Services UK | Animated Logos",
+  description: "3D logo design services UK for businesses that want depth, light and motion. Renders, animation and source files. Packages from $175.",
+  alternates: { canonical: "https://techcorestudio.com/services/3d-logo-design" },
+  openGraph: {
+    title: "3D Logo Design Services UK | Animated Logos",
+    description: "3D logo design services UK for businesses that want depth, light and motion. Renders, animation and source files. Packages from $175.",
+    url: "https://techcorestudio.com/services/3d-logo-design",
+    siteName: "TechCore Studio",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "3D Logo Design Services UK | Animated Logos",
+    description: "3D logo design services UK for businesses that want depth, light and motion. Renders, animation and source files. Packages from $175.",
+  },
+};
 
 const data: ServiceDetailData = {
   slug: "3d-logo-design",
   badge: "3D LOGO DESIGN",
-  heroTitle: "A Logo That Pops Off the",
-  heroHighlight: "Screen",
+  heroTitle: "A Logo With Real Depth",
+  heroHighlight: "That Moves",
   heroSub:
-    "We create stunning 3D logos with real depth, lighting, and texture that make your brand unforgettable on websites, social media, video intros, and physical signage. From static renders to full animations — everything you need to look modern and premium.",
-  metaTitle: "3D Logo Design Services",
+    "We build 3D logos with depth, light and texture for UK and US businesses that want to stand out. Use them on your website, your videos, your social profiles and your signs, with a flat version included for print.",
+  metaTitle: "3D Logo Design Services UK | Animated Logos",
   metaDescription:
-    "Professional 3D logo design services for small businesses and brands. Stunning three-dimensional logos that stand out on digital platforms, packaging, and marketing materials. USA-based design team.",
+    "3D logo design services UK for businesses that want depth, light and motion. Renders, animation and source files. Packages from $175.",
   serviceType: "3D Logo Design",
+  deliverablesTitle: "Everything Your 3D Logo Needs to Shine",
   packages: [
     {
       name: "Basic 3D",
@@ -150,57 +170,68 @@ const data: ServiceDetailData = {
     },
   ],
   deliverables: [
-    "Multiple 3D logo renders (PNG with transparency)",
-    "Rotating 360° animation (MP4/GIF)",
-    "Source 3D files (Blender/OBJ/FBX)",
-    "Flat 2D version for print & embroidery",
-    "Social media profile icons and covers",
+    "Several 3D logo renders in PNG with a clear background",
+    "A rotating 360 degree animation in MP4 or GIF",
+    "Source 3D files in Blender, OBJ and FBX",
+    "A flat 2D version for print and embroidery",
+    "Social profile pictures and cover images",
     "Business card and stationery mockups",
-    "Video intro animation (5-15 seconds)",
-    "Full ownership & source files",
+    "A video intro animation of 5 to 15 seconds",
+    "Full ownership and all source files",
   ],
   steps: [
     {
       n: "1",
-      title: "Brief & Discovery",
-      text: "You share your business story, values, target audience and 3D style preferences.",
+      title: "Tell Us About Your Brand",
+      text: "Share your story, your customers and the 3D style you like, from clean and light to bold and metallic.",
     },
     {
       n: "2",
-      title: "3D Concepts & Moodboard",
-      text: "We present 3-5 unique 3D logo concepts + material/lighting moodboard.",
+      title: "See Your 3D Concepts",
+      text: "We show you three to five distinct 3D ideas with a mood board for materials and lighting, so you can pick a direction early.",
     },
     {
       n: "3",
-      title: "Revisions & Refinement",
-      text: "We refine based on your feedback until the 3D look is perfect.",
+      title: "Refine the Depth and Light",
+      text: "We adjust the chosen design with your feedback until the depth, light and finish look right on screen.",
     },
     {
       n: "4",
-      title: "Renders & Animation Delivery",
-      text: "You receive all 3D files, renders, animations + usage guidelines.",
+      title: "Get Renders and Animation",
+      text: "You receive all 3D files, renders and animations, plus a short guide on where to use each version.",
     },
   ],
   faqs: [
     {
       q: "How many 3D logo concepts do I get?",
-      a: "Basic: 2 concepts, Startup: 4 concepts, Professional: 6 concepts, Elite/Business/Gold: unlimited concepts.",
+      a: "Basic gives you 2 concepts, Startup gives you 4, Professional gives you 6, and Elite, Business and Gold give you unlimited concepts.",
     },
     {
       q: "Do I own the final 3D logo and files?",
-      a: "Yes - 100% ownership and all source 3D files (Blender, OBJ, FBX) delivered upon completion.",
+      a: "Yes. You own the logo in full and you receive all source 3D files in Blender, OBJ and FBX when the work is done.",
     },
     {
       q: "Can I use the 3D logo for print and merchandise?",
-      a: "Yes. Every package includes a flat 2D version optimized for print, embroidery, and single-color use. The 3D version is perfect for digital, video, and large-format signage.",
+      a: "Yes. Every package includes a flat 2D version made for print, embroidery and single colour use. The 3D version suits digital, video and large signs.",
     },
     {
       q: "What if I do not like any 3D concepts?",
-      a: "We offer unlimited revisions until you are happy (included in all packages).",
+      a: "Every package includes unlimited revisions, so we keep working on the ideas until you are happy with one.",
     },
   ],
 };
 
 export default function ThreeDLogoDesignPage() {
-  return <ServiceDetailTemplate data={data} />;
+  return (
+    <>
+      <ServiceDetailTemplate data={data} />
+      <ServiceJsonLd
+        slug={data.slug}
+        metaTitle={data.metaTitle}
+        metaDescription={data.metaDescription}
+        serviceType={data.serviceType}
+        faqs={data.faqs}
+      />
+    </>
+  );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CheckCircle2, ChevronDown, ArrowRight } from "lucide-react";
@@ -9,6 +8,21 @@ import AnimatedBackground from "@/components/background/AnimatedBackground";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContactSection from "@/components/sections/ContactSection";
+
+const RELATED: Record<string, { slug: string; label: string }[]> = {
+  "3d-logo-design": [{ slug: "logo-design", label: "Logo Design" }, { slug: "video-editing", label: "Video Editing" }],
+  "branding": [{ slug: "logo-design", label: "Logo Design" }, { slug: "social-media-marketing", label: "Social Media Marketing" }],
+  "custom-development": [{ slug: "mobile-app-development", label: "Mobile App Development" }, { slug: "lead-generation", label: "Lead Generation" }],
+  "ebook-services": [{ slug: "logo-design", label: "Logo Design" }, { slug: "branding", label: "Branding" }],
+  "ecommerce-development": [{ slug: "custom-development", label: "Custom Development" }, { slug: "seo", label: "SEO" }],
+  "lead-generation": [{ slug: "social-media-marketing", label: "Social Media Marketing" }, { slug: "seo", label: "SEO" }],
+  "logo-design": [{ slug: "3d-logo-design", label: "3D Logo Design" }, { slug: "branding", label: "Branding" }],
+  "mascot-logo-design": [{ slug: "logo-design", label: "Logo Design" }, { slug: "branding", label: "Branding" }],
+  "mobile-app-development": [{ slug: "custom-development", label: "Custom Development" }, { slug: "ecommerce-development", label: "E-commerce Development" }],
+  "seo": [{ slug: "lead-generation", label: "Lead Generation" }, { slug: "social-media-marketing", label: "Social Media Marketing" }],
+  "social-media-marketing": [{ slug: "lead-generation", label: "Lead Generation" }, { slug: "video-editing", label: "Video Editing" }],
+  "video-editing": [{ slug: "social-media-marketing", label: "Social Media Marketing" }, { slug: "3d-logo-design", label: "3D Logo Design" }],
+};
 
 export type ServicePackage = {
   name: string;
@@ -50,43 +64,8 @@ export type ServiceDetailData = {
 export default function ServiceDetailTemplate({ data }: { data: ServiceDetailData }) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": `https://techcorestudio.com/services/${data.slug}#webpage`,
-        "url": `https://techcorestudio.com/services/${data.slug}`,
-        "name": data.metaTitle,
-        "isPartOf": { "@id": "https://techcorestudio.com#website" },
-        "about": { "@id": "https://techcorestudio.com#organization" },
-        "description": data.metaDescription,
-      },
-      {
-        "@type": "Service",
-        "serviceType": data.serviceType,
-        "provider": { "@id": "https://techcorestudio.com#organization" },
-        "areaServed": [
-          { "@type": "Country", "name": "United Kingdom" },
-          { "@type": "Country", "name": "United States" },
-        ],
-        "description": data.metaDescription,
-      },
-    ],
-  };
-
   return (
     <div className="min-h-screen text-white selection:bg-[#5d67f2]/30 bg-[#08080e]">
-      <Head>
-        <title>{data.metaTitle}</title>
-        <meta name="description" content={data.metaDescription} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
-          }}
-        />
-      </Head>
 
       <AnimatedBackground />
       <Navbar />
@@ -125,7 +104,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetailDat
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <span className="text-[#7b85ff] font-semibold uppercase tracking-[0.2em] text-xs block mb-4">Pricing</span>
-              <h2 className="text-3xl md:text-5xl font-bold">Simple Packages, Clear Prices</h2>
+              <h2 className="text-3xl md:text-5xl font-bold">Clear Packages For Every Budget</h2>
               <p className="text-gray-400 mt-4">Pick the package that fits your project. No hidden fees.</p>
             </div>
 
@@ -181,7 +160,7 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetailDat
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#7b85ff] font-semibold uppercase tracking-[0.2em] text-xs block mb-4">What You Get</span>
-            <h2 className="text-3xl md:text-5xl font-bold">{data.deliverablesTitle || "Everything Included, Down to the Last Detail"}</h2>
+            <h2 className="text-3xl md:text-5xl font-bold">{data.deliverablesTitle || "Everything Included In Every Package"}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {data.deliverables.map((d) => (
@@ -243,6 +222,26 @@ export default function ServiceDetailTemplate({ data }: { data: ServiceDetailDat
           </div>
         </section>
       )}
+
+      {/* RELATED SERVICES */}
+      <section className="relative py-12 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Related Services</h2>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {(RELATED[data.slug] || []).map((r) => (
+              <Link key={r.slug} href={`/services/${r.slug}`} className="px-5 py-2.5 rounded-full border border-white/20 text-sm font-semibold hover:bg-white/5 transition-colors">
+                {r.label}
+              </Link>
+            ))}
+            <Link href="/services" className="px-5 py-2.5 rounded-full border border-white/20 text-sm font-semibold hover:bg-white/5 transition-colors">
+              All Services
+            </Link>
+            <Link href="/pricing" className="px-5 py-2.5 rounded-full border border-white/20 text-sm font-semibold hover:bg-white/5 transition-colors">
+              Pricing
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <ContactSection />
       <Footer />

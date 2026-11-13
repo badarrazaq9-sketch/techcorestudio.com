@@ -95,7 +95,7 @@ export default function Footer() {
             <Link href="/" className="block mb-4">
               <div className="relative w-44 h-44">
                 <img
-                  src="/TechCoreStudio Logo-01.png"
+                  src="/techcore-studio-logo.png"
                   alt="TechCore Studio"
                   className="w-full h-full object-contain"
                 />

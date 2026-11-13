@@ -10,16 +10,16 @@ export function getOrganizationSchema() {
     "@type": "Organization",
     name: "TechCore Studio",
     alternateName: "TechCore",
-    url: "https://techcore.studio",
+    url: "https://techcorestudio.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://techcore.studio/TechCoreStudio Logo-01.jpg",
+      url: "https://techcorestudio.com/techcore-studio-logo.png",
       width: 5000,
       height: 3334,
     },
     image: {
       "@type": "ImageObject",
-      url: "https://techcore.studio/og-image.jpg",
+      url: "https://techcorestudio.com/techcore-studio-logo.png",
       width: 1200,
       height: 630,
     },
@@ -69,7 +69,6 @@ export function getOrganizationSchema() {
           latitude: "40.7549",
           longitude: "-73.9860",
         },
-        telephone: "+1-212-555-0199",
       },
     ],
     contactPoint: [
@@ -78,13 +77,6 @@ export function getOrganizationSchema() {
         telephone: "+44-20-7946-0958",
         contactType: "sales",
         areaServed: "GB",
-        availableLanguage: ["English"],
-      },
-      {
-        "@type": "ContactPoint",
-        telephone: "+1-212-555-0199",
-        contactType: "sales",
-        areaServed: "US",
         availableLanguage: ["English"],
       },
       {
@@ -127,8 +119,8 @@ export function getLocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "TechCore Studio",
-    image: "https://techcore.studio/TechCoreStudio Logo-01.jpg",
-    url: "https://techcore.studio",
+    image: "https://techcorestudio.com/techcore-studio-logo.png",
+    url: "https://techcorestudio.com",
     telephone: "+44-20-7946-0958",
     priceRange: "£££",
     address: {
@@ -187,15 +179,7 @@ export function getWebsiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "TechCore Studio",
-    url: "https://techcore.studio",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://techcore.studio/search?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
+    url: "https://techcorestudio.com",
     inLanguage: ["en-GB", "en-US"],
   };
 }
@@ -230,7 +214,7 @@ export function getServiceSchema(service: {
     provider: {
       "@type": "Organization",
       name: service.provider || "TechCore Studio",
-      url: "https://techcore.studio",
+      url: "https://techcorestudio.com",
     },
     areaServed: [
       { "@type": "Country", name: "United Kingdom" },
@@ -322,11 +306,11 @@ export function getContactPageSchema() {
     "@type": "ContactPage",
     name: "Contact TechCore Studio",
     description: "Get in touch with our UK & USA software house team",
-    url: "https://techcore.studio/contact",
+    url: "https://techcorestudio.com/contact",
     mainEntity: {
       "@type": "Organization",
       name: "TechCore Studio",
-      telephone: ["+44-20-7946-0958", "+1-212-555-0199"],
+      telephone: "+44-20-7946-0958",
       email: "davidanderson@techcorestudio.com",
       address: [
         {
@@ -398,8 +382,8 @@ export function getJobPostingSchema(job: {
     hiringOrganization: {
       "@type": "Organization",
       name: "TechCore Studio",
-      sameAs: "https://techcore.studio",
-      logo: "https://techcore.studio/TechCoreStudio Logo-01.jpg",
+      sameAs: "https://techcorestudio.com",
+      logo: "https://techcorestudio.com/techcore-studio-logo.png",
     },
     jobLocation: {
       "@type": "Place",
@@ -453,7 +437,7 @@ export function getBlogPostingSchema(post: {
       name: "TechCore Studio",
       logo: {
         "@type": "ImageObject",
-        url: "https://techcore.studio/TechCoreStudio Logo-01.jpg",
+        url: "https://techcorestudio.com/techcore-studio-logo.png",
       },
     },
     keywords: post.tags?.join(", "),

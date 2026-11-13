@@ -1,18 +1,38 @@
-"use client";
-
+import type { Metadata } from "next";
 import ServiceDetailTemplate, { ServiceDetailData } from "@/components/sections/ServiceDetailTemplate";
+import ServiceJsonLd from "@/components/sections/ServiceJsonLd";
+
+export const metadata: Metadata = {
+  title: "Ecommerce Website Design UK | Shopify and WooCommerce",
+  description: "Ecommerce website design UK for small retailers. Shopify and WooCommerce stores with secure checkout and mobile first design. From $999.99.",
+  alternates: { canonical: "https://techcorestudio.com/services/ecommerce-development" },
+  openGraph: {
+    title: "Ecommerce Website Design UK | Shopify and WooCommerce",
+    description: "Ecommerce website design UK for small retailers. Shopify and WooCommerce stores with secure checkout and mobile first design. From $999.99.",
+    url: "https://techcorestudio.com/services/ecommerce-development",
+    siteName: "TechCore Studio",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ecommerce Website Design UK | Shopify and WooCommerce",
+    description: "Ecommerce website design UK for small retailers. Shopify and WooCommerce stores with secure checkout and mobile first design. From $999.99.",
+  },
+};
 
 const data: ServiceDetailData = {
   slug: "ecommerce-development",
   badge: "E-COMMERCE DEVELOPMENT",
-  heroTitle: "Your Online Store, Built to",
-  heroHighlight: "Sell More",
+  heroTitle: "An Online Store Built",
+  heroHighlight: "To Sell Every Day",
   heroSub:
-    "We build user-friendly e-commerce platforms that make it simple for small businesses to sell products online, handle orders, and grow revenue without technical headaches.",
-  metaTitle: "E-commerce Web Design for Small Businesses",
+    "We build online stores that are easy for customers to use and easy for you to run. Sell products, take orders and grow sales in the UK and the USA, without wrestling with the tech yourself.",
+  metaTitle: "Ecommerce Website Design UK | Shopify and WooCommerce",
   metaDescription:
-    "Shopify and WooCommerce stores built to sell — product pages that convert, secure checkout, mobile-first design. Packages from $999 for small retailers.",
+    "Ecommerce website design UK for small retailers. Shopify and WooCommerce stores with secure checkout and mobile first design. From $999.99.",
   serviceType: "E-commerce Development",
+  deliverablesTitle: "Everything Your Store Needs to Take Orders",
   packages: [
     {
       name: "Beginners Ecommerce Website",
@@ -250,57 +270,68 @@ const data: ServiceDetailData = {
     },
   ],
   deliverables: [
-    "Custom Store Design",
-    "Product Catalog Management",
-    "Secure Payment Integration",
-    "Shipping and Tax Setup",
-    "Mobile Optimization",
-    "Inventory Tracking",
-    "Basic SEO Implementation",
-    "User Training and Support",
+    "A custom store design made for your products and your customers",
+    "Product catalogue setup that is easy to browse and search",
+    "Secure payment setup with trusted card payment options",
+    "Shipping and tax setup that matches how you sell",
+    "Mobile first design so the store works well on phones",
+    "Stock tracking so you always know what you have",
+    "Basic SEO setup so Google can find your products",
+    "Training and support so you can run the store yourself",
   ],
   steps: [
     {
       n: "1",
-      title: "Strategy Session",
-      text: "We discuss your products, target customers, and sales goals to create a tailored e-commerce plan.",
+      title: "Plan Your Store Together",
+      text: "We talk through your products, your customers and your sales goals, then agree a clear plan for the store.",
     },
     {
       n: "2",
-      title: "Design Phase",
-      text: "Our team crafts intuitive layouts that showcase your products and guide visitors to purchase.",
+      title: "See the Design Take Shape",
+      text: "We design clear layouts that show your products well and guide visitors toward the checkout.",
     },
     {
       n: "3",
-      title: "Development & Setup",
-      text: "We build the store with secure integrations for payments, shipping, and inventory management.",
+      title: "Build and Connect Everything",
+      text: "We build the store and connect payments, shipping and stock, then test each part before launch.",
     },
     {
       n: "4",
-      title: "Launch & Optimization",
-      text: "After thorough testing, we go live and provide training to help you manage and grow.",
+      title: "Launch and Learn the Ropes",
+      text: "After final testing we go live and show you how to add products, take orders and keep the store growing.",
     },
   ],
   faqs: [
     {
       q: "Which platform do you use for e-commerce stores?",
-      a: "We primarily use WooCommerce or Shopify based on your needs. Both are user-friendly and scalable, allowing you to manage products easily without coding knowledge.",
+      a: "We build mainly on WooCommerce or Shopify, depending on your needs. Both are easy to manage and both grow with your store, so you can add products without coding.",
     },
     {
       q: "Can I integrate my existing payment system?",
-      a: "Yes, we support popular gateways like PayPal, Stripe, and others. If you have a specific provider, we will work to integrate it seamlessly.",
+      a: "Yes. We work with popular gateways such as PayPal and Stripe. If you use a specific provider, we will work to connect it for you.",
     },
     {
       q: "What about ongoing maintenance?",
-      a: "Your store comes with 30 days of free support. After that, we offer affordable maintenance plans to keep everything running smoothly without surprise costs.",
+      a: "Your store includes 30 days of free support. After that we offer maintenance plans at a clear price, so the store stays up to date without surprise costs.",
     },
     {
       q: "How do you ensure the store is secure?",
-      a: "We implement SSL certificates, secure payment processing, and regular security checks to protect your store and customer data from threats.",
+      a: "We set up SSL certificates, secure payment processing and regular security checks to protect your store and your customer data.",
     },
   ],
 };
 
 export default function EcommerceDevelopmentPage() {
-  return <ServiceDetailTemplate data={data} />;
+  return (
+    <>
+      <ServiceDetailTemplate data={data} />
+      <ServiceJsonLd
+        slug={data.slug}
+        metaTitle={data.metaTitle}
+        metaDescription={data.metaDescription}
+        serviceType={data.serviceType}
+        faqs={data.faqs}
+      />
+    </>
+  );
 }

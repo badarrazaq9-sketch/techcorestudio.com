@@ -23,8 +23,8 @@ const contactSchema = {
     {
       "@type": "Organization",
       name: "TechCore Studio",
-      url: "https://techcore.studio",
-      logo: "https://techcore.studio/TechCoreStudio Logo-01.jpg",
+      url: "https://techcorestudio.com",
+      logo: "https://techcorestudio.com/techcore-studio-logo.png",
       description: "Premium UK & USA-based software house delivering enterprise-grade digital solutions.",
       foundingDate: "2014",
       address: [
@@ -33,7 +33,6 @@ const contactSchema = {
       ],
       contactPoint: [
         { "@type": "ContactPoint", telephone: "+44-20-7946-0958", contactType: "sales", areaServed: "GB", availableLanguage: ["English"] },
-        { "@type": "ContactPoint", telephone: "+1-212-555-0199", contactType: "sales", areaServed: "US", availableLanguage: ["English"] },
       ],
       sameAs: [
         "https://linkedin.com/company/techcore-studio",
@@ -43,21 +42,16 @@ const contactSchema = {
     {
       "@type": "WebSite",
       name: "TechCore Studio",
-      url: "https://techcore.studio",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://techcore.studio/search?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
+      url: "https://techcorestudio.com",
     },
     {
       "@type": "ContactPage",
-      "@id": "https://techcore.studio/contact",
-      url: "https://techcore.studio/contact",
+      "@id": "https://techcorestudio.com/contact",
+      url: "https://techcorestudio.com/contact",
       name: "Contact TechCore Studio",
       description: "Get in touch with TechCore Studio. Reach out to discuss your project and transform your digital presence.",
-      isPartOf: { "@type": "WebSite", "@id": "https://techcore.studio" },
-      mainEntity: { "@type": "Organization", "@id": "https://techcore.studio" },
+      isPartOf: { "@type": "WebSite", "@id": "https://techcorestudio.com" },
+      mainEntity: { "@type": "Organization", "@id": "https://techcorestudio.com" },
     },
   ],
 };

@@ -50,7 +50,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3">
             <div className="relative w-[120px] h-[90px]">
               <Image
-                src="/TechCoreStudio Logo-01.png"
+                src="/techcore-studio-logo.png"
                 alt="TechCore Studio"
                 fill
                 sizes="144px"

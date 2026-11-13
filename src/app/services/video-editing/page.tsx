@@ -1,18 +1,38 @@
-"use client";
-
+import type { Metadata } from "next";
 import ServiceDetailTemplate, { ServiceDetailData } from "@/components/sections/ServiceDetailTemplate";
+import ServiceJsonLd from "@/components/sections/ServiceJsonLd";
+
+export const metadata: Metadata = {
+  title: "Video Editing Services UK | Reels YouTube and Ads",
+  description: "Video editing services UK for Reels, TikTok, YouTube and ads. Fast cuts, strong hooks, clean sound and edits sized for every platform.",
+  alternates: { canonical: "https://techcorestudio.com/services/video-editing" },
+  openGraph: {
+    title: "Video Editing Services UK | Reels YouTube and Ads",
+    description: "Video editing services UK for Reels, TikTok, YouTube and ads. Fast cuts, strong hooks, clean sound and edits sized for every platform.",
+    url: "https://techcorestudio.com/services/video-editing",
+    siteName: "TechCore Studio",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Video Editing Services UK | Reels YouTube and Ads",
+    description: "Video editing services UK for Reels, TikTok, YouTube and ads. Fast cuts, strong hooks, clean sound and edits sized for every platform.",
+  },
+};
 
 const data: ServiceDetailData = {
   slug: "video-editing",
   badge: "VIDEO EDITING",
-  heroTitle: "Videos That Stop the",
-  heroHighlight: "Scroll",
+  heroTitle: "Videos That Make People",
+  heroHighlight: "Stop and Watch",
   heroSub:
-    "We edit short-form ads, reels, YouTube videos and product content for local businesses and creators. Fast cuts, strong hooks, clean sound and platform-optimized edits that increase views, engagement and real customer actions.",
-  metaTitle: "Video Editing Services for Small Businesses",
+    "We edit short form ads, reels, YouTube videos and product content for local businesses and creators. Fast cuts, strong hooks, clean sound and edits sized for each platform, so more people watch, engage and buy.",
+  metaTitle: "Video Editing Services UK | Reels YouTube and Ads",
   metaDescription:
-    "Professional editing for ads, Reels, YouTube & product videos. Fast-paced, engaging cuts that boost views, retention and conversions. Quick turnaround.",
+    "Video editing services UK for Reels, TikTok, YouTube and ads. Fast cuts, strong hooks, clean sound and edits sized for every platform.",
   serviceType: "Video Editing",
+  deliverablesTitle: "What Your Editing Includes",
   packages: [
     {
       name: "Starter Edits",
@@ -69,57 +89,68 @@ const data: ServiceDetailData = {
     },
   ],
   deliverables: [
-    "Edited short-form videos (Reels, Shorts, TikTok, Ads)",
-    "YouTube & longer-form video editing",
-    "Color correction & grading",
-    "Sound design & music sync",
-    "Motion graphics & text overlays",
-    "Multiple formats per platform",
-    "Source project files (if requested)",
-    "30 days post-delivery support",
+    "Edited short form videos for Reels, Shorts, TikTok and ads",
+    "YouTube and longer form video editing",
+    "Colour correction and grading on every video",
+    "Sound design and music matched to the cut",
+    "Motion graphics and text overlays",
+    "Every format you need for each platform",
+    "Source project files when you ask for them",
+    "30 days of support after delivery",
   ],
   steps: [
     {
       n: "1",
-      title: "Brief & Raw Files",
-      text: "You send goals, raw footage and references.",
+      title: "Send Your Footage",
+      text: "You send us your goals, your raw footage and any examples you like, and we agree the plan.",
     },
     {
       n: "2",
-      title: "First Cut & Feedback",
-      text: "We deliver rough edit for your review.",
+      title: "First Cut for Review",
+      text: "We send a rough edit for you to watch and mark up, so the final video matches what you had in mind.",
     },
     {
       n: "3",
-      title: "Revisions & Polish",
-      text: "We refine based on feedback until perfect.",
+      title: "Revisions and Polish",
+      text: "We refine the cut, the sound and the graphics based on your feedback, until it is right.",
     },
     {
       n: "4",
       title: "Final Delivery",
-      text: "You receive all formats + source files if needed.",
+      text: "You receive every format you need, plus the source files when your package includes them.",
     },
   ],
   faqs: [
     {
-      q: "What platforms do you optimize for?",
-      a: "We tailor edits for Instagram Reels, TikTok, YouTube Shorts, Facebook Ads, YouTube long-form and more.",
+      q: "What platforms do you optimise for?",
+      a: "We tailor edits for Instagram Reels, TikTok, YouTube Shorts, Facebook Ads, long form YouTube and more.",
     },
     {
       q: "Do I need to provide music or assets?",
-      a: "We use royalty-free libraries or your own music. We can also suggest licensed tracks.",
+      a: "No. We use royalty free music libraries or your own tracks, and we can suggest licensed music that fits.",
     },
     {
       q: "Can I get the project files?",
-      a: "Yes – all final exports are yours. Source project files available on Premium package.",
+      a: "Yes. All final exports are yours. Source project files are included with the Premium package.",
     },
     {
       q: "How many revisions do I get?",
-      a: "Starter: 1 round per video, Professional: 2 rounds, Premium: unlimited during active month.",
+      a: "Starter includes 1 round per video, Professional includes 2 rounds, and Premium includes unlimited revisions during your active month.",
     },
   ],
 };
 
 export default function VideoEditingPage() {
-  return <ServiceDetailTemplate data={data} />;
+  return (
+    <>
+      <ServiceDetailTemplate data={data} />
+      <ServiceJsonLd
+        slug={data.slug}
+        metaTitle={data.metaTitle}
+        metaDescription={data.metaDescription}
+        serviceType={data.serviceType}
+        faqs={data.faqs}
+      />
+    </>
+  );
 }

@@ -1,18 +1,38 @@
-"use client";
-
+import type { Metadata } from "next";
 import ServiceDetailTemplate, { ServiceDetailData } from "@/components/sections/ServiceDetailTemplate";
+import ServiceJsonLd from "@/components/sections/ServiceJsonLd";
+
+export const metadata: Metadata = {
+  title: "Mobile App Development UK | iOS and Android Apps",
+  description: "Mobile app development UK for iOS and Android. We build booking, ordering and loyalty apps for small businesses, with ownership and store submission included.",
+  alternates: { canonical: "https://techcorestudio.com/services/mobile-app-development" },
+  openGraph: {
+    title: "Mobile App Development UK | iOS and Android Apps",
+    description: "Mobile app development UK for iOS and Android. We build booking, ordering and loyalty apps for small businesses, with ownership and store submission included.",
+    url: "https://techcorestudio.com/services/mobile-app-development",
+    siteName: "TechCore Studio",
+    type: "website",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mobile App Development UK | iOS and Android Apps",
+    description: "Mobile app development UK for iOS and Android. We build booking, ordering and loyalty apps for small businesses, with ownership and store submission included.",
+  },
+};
 
 const data: ServiceDetailData = {
   slug: "mobile-app-development",
   badge: "MOBILE APP DEVELOPMENT",
-  heroTitle: "Your Business, On",
-  heroHighlight: "Their Phones",
+  heroTitle: "An App That Puts Your Business",
+  heroHighlight: "in Every Pocket",
   heroSub:
-    "We build fast, reliable mobile apps for iOS and Android that help local businesses take bookings, sell products, manage orders and connect directly with customers – without complicated tech headaches.",
-  metaTitle: "Mobile App Development for Small Businesses",
+    "We build fast and reliable apps for iPhone and Android. Your customers can book, order, pay and message you direct from their phone, with no tech headaches for you.",
+  metaTitle: "Mobile App Development UK | iOS and Android Apps",
   metaDescription:
-    "Custom iOS & Android apps for bookings, orders, loyalty programs & customer engagement. User-friendly, scalable, built for small business budgets and growth.",
+    "Mobile app development UK for iOS and Android. We build booking, ordering and loyalty apps for small businesses, with ownership and store submission included.",
   serviceType: "App Development",
+  deliverablesTitle: "What Your App Includes",
   packages: [
     {
       name: "Basic Package",
@@ -126,55 +146,66 @@ const data: ServiceDetailData = {
     },
   ],
   deliverables: [
-    "Native iOS and/or Android app",
-    "Clean & user-friendly UI/UX design",
-    "Core features implemented (booking, cart, payments, etc.)",
-    "App Store & Google Play submission support",
-    "Source code & full ownership",
-    "30 days post-launch bug fixes & support",
+    "Native iOS and Android app built for your business",
+    "Clear and easy to use design your customers will enjoy",
+    "Booking, cart, payments and loyalty features built in",
+    "Help with App Store and Google Play submission",
+    "Source code and full ownership handed to you",
+    "30 days of bug fixes and support after launch",
   ],
   steps: [
     {
       n: "1",
-      title: "Discovery & Planning",
-      text: "We understand your business, customers and exact app goals.",
+      title: "Plan Your App",
+      text: "We talk through your business, your customers and what the app must do, then agree the scope and price before we start.",
     },
     {
       n: "2",
-      title: "Design & Prototype",
-      text: "We create wireframes and visual designs for your approval.",
+      title: "See the Design First",
+      text: "We draw the screens and build a working preview so you can check the look and flow before we build the full app.",
     },
     {
       n: "3",
-      title: "Development & Testing",
-      text: "We build the app, test thoroughly and fix any issues.",
+      title: "Build and Test",
+      text: "We build the app and test it on real phones, fixing any issues before it goes near your customers.",
     },
     {
       n: "4",
-      title: "Launch & Support",
-      text: "We submit to app stores and give you training + 30 days support.",
+      title: "Launch and Support",
+      text: "We handle the store submission, show your team how it works and stay on hand for 30 days after launch.",
     },
   ],
   faqs: [
     {
       q: "Do you build for iOS, Android or both?",
-      a: "We build native apps for both. Starter packages are single-platform, higher ones include both iOS and Android.",
+      a: "Both. Starter packages cover one platform, while the higher packages cover iPhone and Android together.",
     },
     {
       q: "How long does it take?",
-      a: "Timeline depends on complexity: 2 weeks for Basic, up to 16 weeks for Enterprise E-Commerce.",
+      a: "It depends on the size of the app. A basic app takes about 2 weeks and the largest e-commerce app takes up to 16 weeks.",
     },
     {
       q: "Will I own the app and code?",
-      a: "Yes – 100% ownership and full source code delivered to you upon completion.",
+      a: "Yes. You own the app and all of the source code. We hand over every file when the work is done.",
     },
     {
       q: "Can I update the app later?",
-      a: "Yes. You get all source files so you or any developer can make future changes easily.",
+      a: "Yes. You get the full source files, so you or any developer can add features and make changes later.",
     },
   ],
 };
 
 export default function MobileAppDevelopmentPage() {
-  return <ServiceDetailTemplate data={data} />;
+  return (
+    <>
+      <ServiceDetailTemplate data={data} />
+      <ServiceJsonLd
+        slug={data.slug}
+        metaTitle={data.metaTitle}
+        metaDescription={data.metaDescription}
+        serviceType={data.serviceType}
+        faqs={data.faqs}
+      />
+    </>
+  );
 }
