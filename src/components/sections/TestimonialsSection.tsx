@@ -143,7 +143,7 @@ export default function TestimonialsSection() {
     <section id="testimonials" className="relative py-32 overflow-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getTestimonialsSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getTestimonialsSchema(current)) }}
       />
 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(93,103,242,0.04),transparent_50%)]" />
